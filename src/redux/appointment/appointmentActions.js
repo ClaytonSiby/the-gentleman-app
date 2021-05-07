@@ -1,34 +1,29 @@
+import axios from 'axios';
 import appointments from './appointmentTypes';
 
-const fetchAppointmentsRequest = () => {
-    return {
-        type: appointments.FETCH_APPOINTMENTS_REQUEST
-    }
-}
+const fetchAppointmentsRequest = () => ({
+  type: appointments.FETCH_APPOINTMENTS_REQUEST,
+});
 
-const fetchAppointmentsSuccess = data => {
-    return {
-        type: appointments.FETCH_APPOINTMENTS_SUCCESS,
-        payload: data
-    }
-}
+const fetchAppointmentsSuccess = (data) => ({
+  type: appointments.FETCH_APPOINTMENTS_SUCCESS,
+  payload: data,
+});
 
-const fetchAppointmentsFailure = error => {
-    return {
-        type: appointments.FETCH_APPOINTMENTS_FAILURE,
-        payload: error
-    }
-}
+const fetchAppointmentsFailure = (error) => ({
+  type: appointments.FETCH_APPOINTMENTS_FAILURE,
+  payload: error,
+});
 
-const fetchAppointments = () => function (dispatch) {
+const fetchAppointments = () => (dispatch) => {
   dispatch(fetchAppointmentsRequest());
   axios.get('/appointments', { mode: 'cors' })
-  .then(response => {
+    .then((response) => {
       dispatch(fetchAppointmentsSuccess(response.data));
-  })
-  .catch(error => {
-      dispatch(fetchAppointmentsFailure(error.response.data.error))
-  })
-}
+    })
+    .catch((error) => {
+      dispatch(fetchAppointmentsFailure(error.response.data.error));
+    });
+};
 
 export default fetchAppointments;
