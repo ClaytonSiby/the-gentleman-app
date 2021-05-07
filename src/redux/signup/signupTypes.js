@@ -3,7 +3,7 @@ const signUp = (() => {
   const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
   const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
 
-  return { SIGNUP_SUCCESS, SIGNUP_FAILURE, SIGNUP_REQUEST}
+  return { SIGNUP_SUCCESS, SIGNUP_FAILURE, SIGNUP_REQUEST };
 })();
 
 export default signUp;

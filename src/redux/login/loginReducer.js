@@ -1,20 +1,20 @@
-import login from './loginTypes'
+import login from './loginTypes';
 
 const initialState = {
   loading: false,
   loggedIn: false,
   user: {},
   userToken: '',
-  error: ''
-}
+  error: '',
+};
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case login.LOGIN_REQUEST:
       return {
         ...state,
-        loading: true
-      }
+        loading: true,
+      };
 
     case login.LOGIN_SUCCESS:
       return {
@@ -23,8 +23,8 @@ const loginReducer = (state = initialState, action) => {
         loggedIn: true,
         user: action.payload,
         userToken: action.payload.auth_token,
-        error: ''
-      }
+        error: '',
+      };
 
     case login.LOGIN_FAILURE:
       return {
@@ -33,12 +33,12 @@ const loginReducer = (state = initialState, action) => {
         loggedIn: false,
         user: {},
         userToken: '',
-        error: action.payload
-      }
+        error: action.payload,
+      };
 
     default:
-      return state
+      return state;
   }
-}
+};
 
 export default loginReducer;
