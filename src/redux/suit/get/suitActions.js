@@ -1,5 +1,5 @@
 import axios from 'axios';
-import suits from './suitTypes';
+import suits from '../suitTypes';
 
 const fetchSuitsRequest = () => ({
   type: suits.FETCH_SUITS_REQUEST,
