@@ -1,0 +1,13 @@
+const suitItemTypes = (() => {
+  const FETCH_SUIT_ITEM_REQUEST = 'FETCH_SUIT_ITEM_REQUEST';
+  const FETCH_SUIT_ITEM_SUCCESS = 'FETCH_SUIT_ITEM_SUCCESS';
+  const FETCH_SUIT_ITEM_FAILURE = 'FETCH_SUIT_ITEM_FAILURE';
+
+  return {
+    FETCH_SUIT_ITEM_REQUEST,
+    FETCH_SUIT_ITEM_SUCCESS,
+    FETCH_SUIT_ITEM_FAILURE
+  }
+})();
+
+export default suitItemTypes;

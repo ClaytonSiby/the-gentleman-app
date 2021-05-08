@@ -1,0 +1,1 @@
+import suitItemTypes from './suitItemTypes';
