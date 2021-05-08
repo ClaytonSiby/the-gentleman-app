@@ -6,8 +6,8 @@ const suitItemTypes = (() => {
   return {
     FETCH_SUIT_ITEM_REQUEST,
     FETCH_SUIT_ITEM_SUCCESS,
-    FETCH_SUIT_ITEM_FAILURE
-  }
+    FETCH_SUIT_ITEM_FAILURE,
+  };
 })();
 
 export default suitItemTypes;
