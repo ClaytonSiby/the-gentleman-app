@@ -17,7 +17,7 @@ const removeAppointmentFailure = (error) => ({
 
 const removeAppointment = (id) => (dispatch) => {
   dispatch(removeAppointmentRequest());
-  axios.delete('/appointmens', id)
+  axios.delete('https://the-gentleman-api.herokuapp.com/appointmens', id)
     .then((response) => {
       dispatch(removeAppointmentSuccess(response.data));
     })

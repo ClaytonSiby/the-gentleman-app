@@ -17,7 +17,7 @@ const loginFailure = (error) => ({
 
 const requestToLogin = (data) => (dispatch) => {
   dispatch(loginRequest());
-  axios.post('/auth/login', data)
+  axios.post('https://the-gentleman-api.herokuapp.com/auth/login', data)
     .then((response) => {
       dispatch(loginSuccess(response.data));
       window.location.href = '/suits';

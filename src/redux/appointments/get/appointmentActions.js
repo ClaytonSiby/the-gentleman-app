@@ -17,7 +17,7 @@ const fetchAppointmentsFailure = (error) => ({
 
 const fetchAppointments = () => (dispatch) => {
   dispatch(fetchAppointmentsRequest());
-  axios.get('/appointments', { mode: 'cors' })
+  axios.get('https://the-gentleman-api.herokuapp.com/appointments', { mode: 'cors' })
     .then((response) => {
       dispatch(fetchAppointmentsSuccess(response.data));
     })

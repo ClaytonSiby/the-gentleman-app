@@ -17,7 +17,7 @@ const addAppointmentFailure = (error) => ({
 
 const postAppointment = (data) => (dispatch) => {
   dispatch(addAppointmentRequest());
-  axios.post('/appointments', data)
+  axios.post('https://the-gentleman-api.herokuapp.com/appointments', data)
     .then((response) => {
       dispatch(addAppointmentSuccess(response.data));
     })

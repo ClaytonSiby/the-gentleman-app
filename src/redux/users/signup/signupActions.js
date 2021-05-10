@@ -18,7 +18,7 @@ const signupFailure = (error) => ({
 const requestSignUp = (data) => (dispatch) => {
   dispatch(signupRequest());
   axios
-    .post('signup', data)
+    .post('https://the-gentleman-api.herokuapp.com/signup', data)
     .then((response) => {
       dispatch(signupSuccess(response.data));
       window.location.href = '/suits';

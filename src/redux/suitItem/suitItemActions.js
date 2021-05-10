@@ -17,7 +17,7 @@ const suitItemFailure = (error) => ({
 
 const getsuitItem = (id) => (dispatch) => {
   dispatch(suitItemRequest());
-  axios.get(`/suits/${id}`, { mode: 'cors' })
+  axios.get(`https://the-gentleman-api.herokuapp.com/suits/${id}`, { mode: 'cors' })
     .then((response) => {
       dispatch(suitItemSuccess(response.data));
     })

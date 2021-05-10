@@ -17,7 +17,7 @@ const fetchSuitsFailure = (error) => ({
 
 const fetchSuits = () => (dispatch) => {
   dispatch(fetchSuitsRequest());
-  axios.get('/suits', { mode: 'cors' })
+  axios.get('https://the-gentleman-api.herokuapp.com/suits', { mode: 'cors' })
     .then((response) => {
       dispatch(fetchSuitsSuccess(response.data));
     })
