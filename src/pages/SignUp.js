@@ -1,26 +1,28 @@
 import React from 'react';
-import { Form, Container } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
+import styles from '../assets/scss/signup.module.scss';
 
 const SignUp = () => (
-  <Container>
+  <div className={`${styles.signup}`}>
+    <h1>Sign Up</h1>
     <Form>
-      <Form.Group className="my-1">
-        <Form.Control type="text" placeholder="Enter name here.." />
-      </Form.Group>
-      <Form.Group className="my-1">
+      <Form.Group controlId="formBasicEmail">
+        <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />
+        <Form.Text className="text-muted">
+          We&apos;ll never share your email with anyone else.
+        </Form.Text>
       </Form.Group>
-      <Form.Group className="my-1">
-        <Form.Control type="password" placeholder="password****" />
-        <Form.Control type="password" placeholder="confirm password****" className="my-1" />
+
+      <Form.Group controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" placeholder="Password" />
       </Form.Group>
-      <Form.Group className="my-1">
-        <button type="submit" className="btn btn-block btn-md">
-          SignUp
-        </button>
-      </Form.Group>
+      <button className="btn btn-primary" type="submit">
+        Submit
+      </button>
     </Form>
-  </Container>
+  </div>
 );
 
 export default SignUp;
