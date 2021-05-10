@@ -29,11 +29,14 @@ const App = () => (
         )}
       />
 
-      <Route path="/login" render={() => (
-        <MainLayout>
-          <Login />
-        </MainLayout>
-      )} />
+      <Route
+        path="/login"
+        render={() => (
+          <MainLayout>
+            <Login />
+          </MainLayout>
+        )}
+      />
     </Switch>
   </div>
 );
