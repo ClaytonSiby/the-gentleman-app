@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 import Homepage from './pages/Homepage';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
@@ -8,7 +9,7 @@ import MainLayout from './Layouts/MainLayout';
 import styles from './assets/scss/app.module.scss';
 
 const App = () => (
-  <div className={`${styles.app}`}>
+  <Container className={`${styles.app}`}>
     <Switch>
       <Route
         exact
@@ -38,7 +39,7 @@ const App = () => (
         )}
       />
     </Switch>
-  </div>
+  </Container>
 );
 
 export default App;
