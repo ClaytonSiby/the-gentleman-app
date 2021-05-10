@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import suitItemReducer from './suitItem/suitItemReducer';
 import addAppReducer from './appointments/post/add/addAppReducer';
 import removeAppReducer from './appointments/post/remove/removeAppReducer';
@@ -6,6 +8,12 @@ import appointmentReducer from './appointments/get/appointmentReducer';
 import suitReducer from './suits/get/suitReducer';
 import loginReducer from './users/login/loginReducer';
 import signupReducer from './users/signup/signupReducer';
+
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['suitItem', 'addAppointment', 'removeAppointment', 'appointments', 'suits', 'login', 'signup'],
+};
 
 const rootReducer = combineReducers({
   suitItem: suitItemReducer,
@@ -17,4 +25,4 @@ const rootReducer = combineReducers({
   signup: signupReducer,
 });
 
-export default rootReducer;
+export default persistReducer(persistConfig, rootReducer);
