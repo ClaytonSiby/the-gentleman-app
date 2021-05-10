@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 
 const Login = () => (
-  <Container>
+  <div>
     <h1>Login</h1>
     <Form>
       <Form.Group controlId="formBasicEmail">
@@ -21,7 +21,7 @@ const Login = () => (
         Submit
       </button>
     </Form>
-  </Container>
+  </div>
 );
 
 export default Login;
