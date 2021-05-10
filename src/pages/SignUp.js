@@ -10,8 +10,8 @@ const SignUp = () => (
       <Form.Control type="email" placeholder="Enter email" />
     </Form.Group>
     <Form.Group>
-      <Form.Control  type="password" placeholder="password****" />
-      <Form.Control  type="password" placeholder="confirm password****" />
+      <Form.Control type="password" placeholder="password****" />
+      <Form.Control type="password" placeholder="confirm password****" />
     </Form.Group>
     <Form.Group>
       <button type="submit" className="btn btn-block btn-md">SignUp</button>
