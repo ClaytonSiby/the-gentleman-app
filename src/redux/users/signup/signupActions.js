@@ -23,7 +23,7 @@ const requestSignUp = (data) => (dispatch) => {
       dispatch(signupSuccess(response.data));
       window.location.href = '/suits';
     })
-    .catch((error) => dispatch(signupFailure(error.message)));
+    .catch((error) => dispatch(signupFailure(error)));
 };
 
 export default requestSignUp;
