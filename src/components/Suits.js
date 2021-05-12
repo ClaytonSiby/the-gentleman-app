@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import fetchSuits from '../redux/suits/get/suitActions'
 import { connect, useSelector } from 'react-redux'
+import ReactLoading from 'react-loading'
 import { Redirect } from 'react-router-dom'
+import { Container, Row, Col } from 'react-bootstrap'
 
 const Suits = ({ suitsData, suitsRequest }) => {
   const [loadingComplete, setLoadingComplete] = useState(false)
@@ -14,16 +16,24 @@ const Suits = ({ suitsData, suitsRequest }) => {
     setLoadingComplete(true)
   }, [])
 
-  return !loadingComplete ? (
-    <div>Loading....</div>
-  ) : auth_token === undefined && auth_token === 'undefined' ? (
-    <div>
-      {suitsData.error}
-      <Redirect to='/login' />
-    </div>
-  ) : (
-    suitsData &&
-    suitsData.suits.map((data) => <div>{JSON.stringify(data)}</div>)
+  return (
+    <Container>
+      {!loadingComplete ? (
+        <div>
+          <ReactLoading type='bars' color='green' height={70} width={80} />
+        </div>
+      ) : (
+        <Row>
+          {
+            suitsData && suitsData.suits && suitsData.suits.map(data => (
+              <Col xs={12} sm={12} md={3} key={Math.floor(Math.random() * 1000)}>
+                { data.name }
+              </Col>
+            ) )
+          }
+        </Row>
+      )}
+    </Container>
   )
 }
 

@@ -32,7 +32,7 @@ const fetchSuits = auth_token => dispatch => {
       dispatch(fetchSuitsSuccess(response.data))
     })
     .catch(error => {
-      dispatch(fetchSuitsFailure(error.message))
+      dispatch(fetchSuitsFailure(error.response.data.message))
     })
 }
 
