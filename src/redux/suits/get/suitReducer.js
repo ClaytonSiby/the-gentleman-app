@@ -1,4 +1,8 @@
-import suits from './suitTypes';
+import {
+  FETCH_SUITS_REQUEST,
+  FETCH_SUITS_FAILURE,
+  FETCH_SUITS_SUCCESS
+} from './suitTypes'
 
 const initialState = {
   loading: false,
@@ -8,13 +12,13 @@ const initialState = {
 
 const suitReducer = (state = initialState, action) => {
   switch (action.type) {
-    case suits.FETCH_SUITS_REQUEST:
+    case FETCH_SUITS_REQUEST:
       return {
         ...state,
         loading: true,
       };
 
-    case suits.FETCH_SUITS_SUCCESS:
+    case FETCH_SUITS_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -22,7 +26,7 @@ const suitReducer = (state = initialState, action) => {
         error: '',
       };
 
-    case suits.FETCH_SUITS_FAILURE:
+    case FETCH_SUITS_FAILURE:
       return {
         ...state,
         loading: false,
