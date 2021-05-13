@@ -7,7 +7,7 @@ const Login = () => {
 
   return (
     <div className={`${styles.login}`}>
-      <h1>Login</h1>
+      <h2 className="mb-3">Login</h2>
       <Form>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
