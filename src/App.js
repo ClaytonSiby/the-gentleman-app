@@ -1,16 +1,16 @@
-import React from 'react'
-import { Route, Router, Switch } from 'react-router-dom'
-import { createBrowserHistory } from 'history'
-import { Container } from 'react-bootstrap'
-import Homepage from './pages/Homepage'
-import SignUp from './pages/SignUp'
-import Login from './pages/Login'
-import Suits from './components/Suits'
-import HomepageLayout from './Layouts/HomepageLayout'
-import MainLayout from './Layouts/MainLayout'
-import styles from './assets/scss/app.module.scss'
+import React from 'react';
+import { Route, Router, Switch } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import { Container } from 'react-bootstrap';
+import Homepage from './pages/Homepage';
+import SignUp from './pages/SignUp';
+import Login from './pages/Login';
+import Suits from './components/Suits';
+import HomepageLayout from './Layouts/HomepageLayout';
+import MainLayout from './Layouts/MainLayout';
+import styles from './assets/scss/app.module.scss';
 
-const history = createBrowserHistory()
+const history = createBrowserHistory();
 
 const App = () => (
   <Container className={`${styles.app}`}>
@@ -18,7 +18,7 @@ const App = () => (
       <Switch>
         <Route
           exact
-          path='/'
+          path="/"
           render={() => (
             <HomepageLayout>
               <Homepage />
@@ -27,7 +27,7 @@ const App = () => (
         />
 
         <Route
-          path='/signup'
+          path="/signup"
           render={() => (
             <MainLayout>
               <SignUp />
@@ -36,7 +36,7 @@ const App = () => (
         />
 
         <Route
-          path='/login'
+          path="/login"
           render={() => (
             <MainLayout>
               <Login />
@@ -45,7 +45,7 @@ const App = () => (
         />
 
         <Route
-          path='/suits'
+          path="/suits"
           render={() => (
             <MainLayout>
               <Suits />
@@ -55,6 +55,6 @@ const App = () => (
       </Switch>
     </Router>
   </Container>
-)
+);
 
-export default App
+export default App;

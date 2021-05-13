@@ -1,39 +1,39 @@
-import axios from 'axios'
+import axios from 'axios';
 import {
   FETCH_SUITS_REQUEST,
   FETCH_SUITS_FAILURE,
-  FETCH_SUITS_SUCCESS
-} from './suitTypes'
+  FETCH_SUITS_SUCCESS,
+} from './suitTypes';
 
 const fetchSuitsRequest = () => ({
-  type: FETCH_SUITS_REQUEST
-})
+  type: FETCH_SUITS_REQUEST,
+});
 
-const fetchSuitsSuccess = suits => ({
+const fetchSuitsSuccess = (suits) => ({
   type: FETCH_SUITS_SUCCESS,
-  payload: suits
-})
+  payload: suits,
+});
 
-const fetchSuitsFailure = error => ({
+const fetchSuitsFailure = (error) => ({
   type: FETCH_SUITS_FAILURE,
-  payload: error
-})
+  payload: error,
+});
 
-const fetchSuits = auth_token => dispatch => {
-  dispatch(fetchSuitsRequest())
+const fetchSuits = (auth_token) => (dispatch) => {
+  dispatch(fetchSuitsRequest());
   axios
     .get('https://the-gentleman-api.herokuapp.com/suits', {
       headers: {
         Authorization: `Basic ${auth_token}`,
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     })
-    .then(response => {
-      dispatch(fetchSuitsSuccess(response.data))
+    .then((response) => {
+      dispatch(fetchSuitsSuccess(response.data));
     })
-    .catch(error => {
-      dispatch(fetchSuitsFailure(error.response.data.message))
-    })
-}
+    .catch((error) => {
+      dispatch(fetchSuitsFailure(error.response.data.message));
+    });
+};
 
-export default fetchSuits
+export default fetchSuits;

@@ -1,8 +1,8 @@
 import {
   FETCH_SUITS_REQUEST,
   FETCH_SUITS_FAILURE,
-  FETCH_SUITS_SUCCESS
-} from './suitTypes'
+  FETCH_SUITS_SUCCESS,
+} from './suitTypes';
 
 const initialState = {
   loading: false,
