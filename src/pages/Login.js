@@ -9,16 +9,16 @@ const Login = () => {
   const password = useRef(null);
   const dispatch = useDispatch();
 
-  const handleLogin = e => {
+  const handleLogin = (e) => {
     e.preventDefault();
 
     const userCredentials = {
       email: email.current.value,
-      password: password.current.value
-    }
+      password: password.current.value,
+    };
 
     dispatch(requestToLogin(userCredentials));
-  }
+  };
 
   return (
     <div className={`${styles.login}`}>

@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from '../assets/scss/footer.module.scss'
+import React from 'react';
+import styles from '../assets/scss/footer.module.scss';
 
 const Footer = () => (
   <div className={`pt-4 text-center ${styles.footerContainer}`}>
@@ -7,21 +7,21 @@ const Footer = () => (
     <p>
       <span className={`${styles.socialIcon}`}>
         <a href="">
-          <i className='fab fa-github'></i>
+          <i className="fab fa-github" />
         </a>
       </span>
       <span className={`${styles.socialIcon}`}>
         <a href="">
-          <i className='fab fa-linkedin-in'></i>
+          <i className="fab fa-linkedin-in" />
         </a>
       </span>
       <span className={`${styles.socialIcon}`}>
         <a href="">
-          <i className='fab fa-twitter'></i>
+          <i className="fab fa-twitter" />
         </a>
       </span>
     </p>
   </div>
-)
+);
 
-export default Footer
+export default Footer;
