@@ -52,7 +52,11 @@ const Suits = ({ suitsData, suitsRequest }) => {
 };
 
 Suits.propTypes = {
-  suitsData: PropTypes.object.isRequired,
+  suitsData: PropTypes.shape({
+    loading: PropTypes.bool.isRequired,
+    suits: PropTypes.instanceOf(Array).isRequired,
+    error: PropTypes.string.isRequired,
+  }).isRequired,
   suitsRequest: PropTypes.func.isRequired,
 };
 
