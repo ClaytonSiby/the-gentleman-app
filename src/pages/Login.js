@@ -1,21 +1,25 @@
 import React, { useRef } from 'react';
+import { useDispatch } from 'react-redux';
 import { Form } from 'react-bootstrap';
+import requestToLogin from '../redux/users/login/loginActions';
 import styles from '../assets/scss/login.module.scss';
 
 const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
+  const dispatch = useDispatch();
 
   const handleLogin = e => {
     e.preventDefault();
 
-    const data = {
+    const userCredentials = {
       email: email.current.value,
       password: password.current.value
     }
 
-    console.log(data)
+    dispatch(requestToLogin(userCredentials));
   }
+
   return (
     <div className={`${styles.login}`}>
       <h2 className="mb-3">Login</h2>
