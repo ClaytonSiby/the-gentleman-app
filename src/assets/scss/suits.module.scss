@@ -1,32 +1,75 @@
-$break-point-table: 768px;
-
-.header {
-
-}
+$break-point-tablet: 768px;
+$break-point-mobile: 414px;
+$break-point-desktop: 992px;
 
 .suitsContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+
+  .suitThumbnail {
+    height: 30vh;
+    background: #fff;
+    position: relative;
+    transition: .6s ease-out;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .5);
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, #000, transparent);
+        z-index: 2;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    &:hover{
+        cursor: pointer;
+        transform: translateY(25px);
+
+        &:before {
+            opacity: 1;
+        }
+
+        .hide {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+    }
+
+    .hide {
+        position: relative;
+        z-index: 3;
+        color: #fff;
+        opacity: 0;
+        transform: translateY(60px);
+        transition: 0.5s;
+    }
+  }
+
+  @media only screen and (max-width: $break-point-mobile) {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
+  }
 
-    .suitThumbnail {
-        height: 30vh;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
+  @media only screen and (min-width: $break-point-tablet) {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
 
-    @media only screen and (max-width: 414px) {
-        display: grid;
-        grid-template-columns: auto;
-    }
-
-    @media only screen and (min-width: 640px) {
-		display: grid;
-        grid-template-columns: auto auto auto;
-	}
-
-    @media only screen and (min-width: 992px) {
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-    }
+  @media only screen and (min-width: $break-point-desktop) {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
 }

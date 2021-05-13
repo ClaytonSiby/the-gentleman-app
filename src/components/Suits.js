@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import fetchSuits from '../redux/suits/get/suitActions'
 import { connect, useSelector } from 'react-redux'
 import ReactLoading from 'react-loading'
-import { Redirect } from 'react-router-dom'
 import { Container, Row, Col } from 'react-bootstrap'
 import styles from '../assets/scss/suits.module.scss'
 
@@ -34,13 +33,9 @@ const Suits = ({ suitsData, suitsRequest }) => {
               <div
                 className={`${styles.suitThumbnail} my-1 p-2`}
                 key={data.id}
-                style={{ 
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .6)),url(${data.imageUrl})`,
-                  borderRadius: '15px',
-                  marginLeft: '.5rem'
-                }}
               >
-                
+                <img src={`${data.imageUrl}`} />
+                <p className={`${styles.hide}`}> { data.name } </p>
               </div>
             ))}
         </div>
