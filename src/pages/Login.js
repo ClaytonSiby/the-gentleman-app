@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
 import { Form } from 'react-bootstrap';
+import styles from '../assets/scss/login.module.scss';
 
 const Login = () => {
   const email = useRef(null);
 
   return (
-    <div>
+    <div className={`${styles.login}`}>
       <h1>Login</h1>
       <Form>
         <Form.Group controlId="formBasicEmail">
@@ -20,7 +21,7 @@ const Login = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
-        <button className="btn btn-primary" type="submit">
+        <button className="btn btn-primary my-3" type="submit">
           Submit
         </button>
       </Form>
