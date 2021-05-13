@@ -8,7 +8,7 @@ const SignUp = () => {
   const username = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-  const password_confirmation = useRef(null);
+  const passwordConfirmation = useRef(null);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -19,7 +19,7 @@ const SignUp = () => {
       username: username.current.value,
       email: email.current.value,
       password: password.current.value,
-      password_confirmation: password_confirmation.current.value,
+      passwordConfirmation: passwordConfirmation.current.value,
     };
 
     dispatch(requestSignUp(data));
@@ -51,7 +51,7 @@ const SignUp = () => {
         <Form.Group controlId="passwordConfirmation">
           <Form.Label>Password Confirmation</Form.Label>
           <Form.Control
-            ref={password_confirmation}
+            ref={passwordConfirmation}
             type="password"
             placeholder="*********"
           />

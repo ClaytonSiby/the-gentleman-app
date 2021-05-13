@@ -19,12 +19,12 @@ const fetchSuitsFailure = (error) => ({
   payload: error,
 });
 
-const fetchSuits = (auth_token) => (dispatch) => {
+const fetchSuits = (authToken) => (dispatch) => {
   dispatch(fetchSuitsRequest());
   axios
     .get('https://the-gentleman-api.herokuapp.com/suits', {
       headers: {
-        Authorization: `Basic ${auth_token}`,
+        Authorization: `Basic ${authToken}`,
         'Content-Type': 'application/json',
       },
     })

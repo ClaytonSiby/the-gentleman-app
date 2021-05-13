@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { connect, useSelector } from 'react-redux';
 import ReactLoading from 'react-loading';
 import { Container, Row, Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import fetchSuits from '../redux/suits/get/suitActions';
 import styles from '../assets/scss/suits.module.scss';
 
 const Suits = ({ suitsData, suitsRequest }) => {
   const [loadingComplete, setLoadingComplete] = useState(false);
-  const auth_token = useSelector((state) => state.signup.userToken);
+  const authToken = useSelector((state) => state.signup.userToken);
 
   useEffect(() => {
     (async () => {
-      await suitsRequest(auth_token);
+      await suitsRequest(authToken);
     })();
     setLoadingComplete(true);
   }, []);
@@ -34,7 +35,7 @@ const Suits = ({ suitsData, suitsRequest }) => {
                 className={`${styles.suitThumbnail} my-1 p-2`}
                 key={data.id}
               >
-                <img src={`${data.imageUrl}`} />
+                <img src={`${data.imageUrl}`} alt={`${data.name} image`} />
                 <p className={`${styles.hide}`}>
                   {' '}
                   { data.name }
@@ -48,6 +49,11 @@ const Suits = ({ suitsData, suitsRequest }) => {
       )}
     </Container>
   );
+};
+
+Suits.propTypes = {
+  suitsData: PropTypes.object.isRequired,
+  suitsRequest: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
