@@ -35,7 +35,7 @@ const Suits = ({ suitsData, suitsRequest }) => {
                 className={`${styles.suitThumbnail} my-1 p-2`}
                 key={data.id}
               >
-                <img src={`${data.imageUrl}`} alt={`${data.name} image`} />
+                <img src={`${data.imageUrl}`} alt={`${data.name}`} />
                 <p className={`${styles.hide}`}>
                   {' '}
                   { data.name }
