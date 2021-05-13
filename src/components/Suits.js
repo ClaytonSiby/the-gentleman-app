@@ -36,11 +36,17 @@ const Suits = ({ suitsData, suitsRequest }) => {
                 key={data.id}
               >
                 <img src={`${data.imageUrl}`} alt={`${data.name}`} />
-                <p className={`${styles.hide}`}>
-                  {' '}
-                  { data.name }
-                  {' '}
-                </p>
+                <div className={`${styles.hide} p-3`}>
+                  <div>
+                    <p>
+                      <span className={`${styles.title}`}>{ data.name }</span>
+                      <a href="/" className={`${styles.appointmentIcon} m-5`}>
+                        <i className="far fa-heart" />
+                      </a>
+                    </p>
+
+                  </div>
+                </div>
               </div>
             ))}
             </div>

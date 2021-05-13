@@ -14,12 +14,27 @@ $break-point-desktop: 992px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 
     .hide {
-      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
       z-index: 3;
       color: #fff;
       opacity: 0;
       transform: translateY(60px);
       transition: 0.5s;
+
+      .title {
+        font-size: 1.4rem;
+        font-style: italic;
+      }
+
+      .appointmentIcon {
+        font-size: 1.7rem;
+      }
     }
 
     &::before {
@@ -37,7 +52,6 @@ $break-point-desktop: 992px;
     }
 
     &:hover {
-      cursor: pointer;
       transform: translateY(25px);
 
       &::before {
