@@ -8,36 +8,33 @@ import styles from '../assets/scss/header.module.scss'
 const Header = ({ loggedIn }) => (
   <Navbar
     sticky='top'
-    className={`px-2 ${styles.theNavbar}`}
+    className={`p-0 m-0 ${styles.theNavbar}`}
     collapseOnSelect
     expand='lg'
     bg='white'
     variant='light'
   >
-    <div>
-      <Navbar.Brand href='#home'>
-        <img src={logo} alt='logo' />
-      </Navbar.Brand>
-    </div>
-    <div>
-      <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-      <Navbar.Collapse id='responsive-navbar-nav'>
-        {loggedIn ? (
-          <Nav className='mr-auto'>
-            <Nav.Link href='/appointments'>Appointments</Nav.Link>
-            <Nav.Link href='/signout'>Logout</Nav.Link>
-          </Nav>
-        ) : (
-          <Nav className='mr-auto'>
-            <Nav.Link href='/appointments'>Appointments</Nav.Link>
-            <Nav.Link href='/login'>Login</Nav.Link>
-            <Nav.Link eventKey={2} href='/signup'>
-              SignUp
-            </Nav.Link>
-          </Nav>
-        )}
-      </Navbar.Collapse>
-    </div>
+    <Navbar.Brand href='#home'>
+      <img src={logo} alt='logo' />
+    </Navbar.Brand>
+
+    <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+    <Navbar.Collapse id='responsive-navbar-nav'>
+      {loggedIn ? (
+        <Nav className='mr-auto'>
+          <Nav.Link href='/appointments'>Appointments</Nav.Link>
+          <Nav.Link href='/signout'>Logout</Nav.Link>
+        </Nav>
+      ) : (
+        <Nav className='mr-auto'>
+          <Nav.Link href='/appointments'>Appointments</Nav.Link>
+          <Nav.Link href='/login'>Login</Nav.Link>
+          <Nav.Link href='/signup'>
+            SignUp
+          </Nav.Link>
+        </Nav>
+      )}
+    </Navbar.Collapse>
   </Navbar>
 )
 

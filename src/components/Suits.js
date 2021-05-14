@@ -20,7 +20,7 @@ const Suits = ({ suitsData, suitsRequest }) => {
   }, []);
 
   return (
-    <Container className="text-light">
+    <div className="text-light">
       {!loadingComplete ? (
         <div>
           <ReactLoading type="bars" color="green" height={70} width={80} />
@@ -57,7 +57,7 @@ const Suits = ({ suitsData, suitsRequest }) => {
           </Col>
         </Row>
       )}
-    </Container>
+    </div>
   );
 };
 
