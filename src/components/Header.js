@@ -3,39 +3,39 @@ import PropTypes from 'prop-types';
 import { Navbar, Nav } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import logo from '../assets/images/logo.PNG';
+import { Link } from 'react-router-dom';
 import styles from '../assets/scss/header.module.scss';
 
 const Header = ({ loggedIn }) => (
-  <Navbar
-    sticky="top"
-    className={`p-0 m-0 ${styles.theNavbar}`}
-    collapseOnSelect
-    expand="lg"
-    bg="white"
-    variant="light"
-  >
-    <Navbar.Brand href="#home">
-      <img src={logo} alt="logo" />
-    </Navbar.Brand>
-
-    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-    <Navbar.Collapse id="responsive-navbar-nav">
-      {loggedIn ? (
-        <Nav className="mr-auto">
-          <Nav.Link href="/appointments">Appointments</Nav.Link>
-          <Nav.Link href="/signout">Logout</Nav.Link>
-        </Nav>
-      ) : (
-        <Nav className="mr-auto">
-          <Nav.Link href="/appointments">Appointments</Nav.Link>
-          <Nav.Link href="/login">Login</Nav.Link>
-          <Nav.Link href="/signup">
-            SignUp
-          </Nav.Link>
-        </Nav>
-      )}
-    </Navbar.Collapse>
-  </Navbar>
+  <Navbar collapseOnSelect expand="sm">
+  <Navbar.Brand href="/"><img className="logo" src={logo} alt="Car Rentals" /></Navbar.Brand>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="mr-auto" />
+    <Nav className="d-flex justify-content-end">
+      {
+        !(loggedIn)
+          ? (
+            <>
+              <Link className="nav-link white" to="/login">SIGN IN</Link>
+              <Link className="nav-link" to="/signup">
+                <span className="btn-menu">SIGN UP</span>
+              </Link>
+            </>
+          )
+          : (
+            <>
+              <Link className="nav-link white" to="/suits">Suits</Link>
+              <Link className="nav-link white" to="/appointments">Appointments</Link>
+              <Link className="nav-link white" to="/logout">
+                LOGOUT
+              </Link>
+            </>
+          )
+      }
+    </Nav>
+  </Navbar.Collapse>
+</Navbar>
 );
 
 Header.propTypes = {
