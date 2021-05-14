@@ -12,7 +12,7 @@ const Homepage = () => (
       </div>
     </Col>
     <Col className={`${styles.welcomeText}`}>
-      <button className="my-2 btn btn-md btn-default border">Explore More</button>
+      <button className="my-2 btn btn-md btn-default border" type="button">Explore More</button>
       <p className="m-2">
         Explore the style, the elegant look for your special occassion. We offer
         high quility products. The gentleman is here to give you a sophisticated
