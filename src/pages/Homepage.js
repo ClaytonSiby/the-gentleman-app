@@ -1,6 +1,6 @@
-import React from 'react'
-import { Row, Col } from 'react-bootstrap'
-import styles from '../assets/scss/homepage.module.scss'
+import React from 'react';
+import { Row, Col } from 'react-bootstrap';
+import styles from '../assets/scss/homepage.module.scss';
 
 const Homepage = () => (
   <Row className={`${styles.homepage} p-0 m-0`}>
@@ -20,6 +20,6 @@ const Homepage = () => (
       </p>
     </Col>
   </Row>
-)
+);
 
-export default Homepage
+export default Homepage;

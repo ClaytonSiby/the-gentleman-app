@@ -13,7 +13,7 @@ import styles from './assets/scss/app.module.scss';
 const history = createBrowserHistory();
 
 const App = () => (
-  <Container className={`${styles.app}`}>
+  <Container fluid className={`${styles.app}`}>
     <Router history={history}>
       <Switch>
         <Route
