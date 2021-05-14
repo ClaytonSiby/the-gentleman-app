@@ -8,8 +8,8 @@ import styles from '../assets/scss/suits.module.scss';
 
 const Suits = ({ suitsData, suitsRequest }) => {
   const [loadingComplete, setLoadingComplete] = useState(false);
-  const authToken = useSelector((state) => state.signup.userToken);
-
+  const authToken = useSelector(state => state.signup.user.auth_token);
+  
   useEffect(() => {
     setTimeout(() => {
       (async () => {
