@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Navbar, Nav } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import logo from '../assets/images/logo.PNG';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from '../assets/scss/header.module.scss';
 
 const Header = () => {
