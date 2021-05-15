@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { connect, useSelector } from 'react-redux';
 import ReactLoading from 'react-loading';
-import {  Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import fetchSuits from '../redux/suits/get/suitActions';
 import styles from '../assets/scss/suits.module.scss';
 
 const Suits = ({ suitsData, suitsRequest }) => {
   const [loadingComplete, setLoadingComplete] = useState(false);
-  const authToken = useSelector(state => state.signup.user.auth_token);
-  
+  const authToken = useSelector((state) => state.signup.user.auth_token);
+
   useEffect(() => {
     setTimeout(() => {
       (async () => {

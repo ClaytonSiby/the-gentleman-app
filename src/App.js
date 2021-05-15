@@ -16,7 +16,7 @@ const history = createBrowserHistory();
 
 const App = memo(({ loggedIn }) => (
   <Container fluid className={`${styles.app}`}>
-    <Router history={history} >
+    <Router history={history}>
       <Switch>
         <Route
           exact
@@ -55,26 +55,30 @@ const App = memo(({ loggedIn }) => (
           )}
         />
 
-        <Route path="/appointments" render={() => (
-          <MainLayout>
-            <Appointments />
-          </MainLayout>
-        )}/>
+        <Route
+          path="/appointments"
+          render={() => (
+            <MainLayout>
+              <Appointments />
+            </MainLayout>
+          )}
+        />
 
-        <Route path="/logout" render={() => {
-          window.location.reload();
-          localStorage.setItem('userToken', undefined);
-          window.location.href = '/login';
-        }}/>
+        <Route
+          path="/logout"
+          render={() => {
+            window.location.reload();
+            localStorage.setItem('userToken', undefined);
+            window.location.href = '/login';
+          }}
+        />
       </Switch>
     </Router>
   </Container>
 ));
 
-const mapStateToProps = state => {
-  return {
-    loggedIn: state.signup.loggedIn
-  }
-}
+const mapStateToProps = (state) => ({
+  loggedIn: state.signup.loggedIn,
+});
 
 export default connect(mapStateToProps)(App);

@@ -2,20 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Navbar, Nav } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import logo from '../assets/images/logo.PNG';
 import { Link } from 'react-router-dom';
+import logo from '../assets/images/logo.PNG';
 import styles from '../assets/scss/header.module.scss';
 
 const Header = () => {
-  const userToken = localStorage.getItem('userToken')
+  const userToken = localStorage.getItem('userToken');
   return (
-  <Navbar collapseOnSelect expand="sm">
-  <Navbar.Brand href="/"><img className="logo" src={logo} alt="Car Rentals" /></Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="mr-auto" />
-    <Nav className="d-flex justify-content-end">
-      {
+    <Navbar collapseOnSelect expand="sm">
+      <Navbar.Brand href="/"><img className="logo" src={logo} alt="Car Rentals" /></Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto" />
+        <Nav className="d-flex justify-content-end">
+          {
         userToken === undefined || userToken === 'undefined'
           ? (
             <>
@@ -35,10 +35,11 @@ const Header = () => {
             </>
           )
       }
-    </Nav>
-  </Navbar.Collapse>
-</Navbar>
-)};
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+};
 
 Header.propTypes = {
   loggedIn: PropTypes.bool.isRequired,
