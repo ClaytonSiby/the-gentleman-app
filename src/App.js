@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-import { connect } from 'react-redux';
 import { Route, Router, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { Container } from 'react-bootstrap';
@@ -14,7 +13,7 @@ import styles from './assets/scss/app.module.scss';
 
 const history = createBrowserHistory();
 
-const App = memo(({ loggedIn }) => (
+const App = () => (
   <Container fluid className={`${styles.app}`}>
     <Router history={history}>
       <Switch>
@@ -75,10 +74,6 @@ const App = memo(({ loggedIn }) => (
       </Switch>
     </Router>
   </Container>
-));
+);
 
-const mapStateToProps = (state) => ({
-  loggedIn: state.signup.loggedIn,
-});
-
-export default connect(mapStateToProps)(App);
+export default memo(App);

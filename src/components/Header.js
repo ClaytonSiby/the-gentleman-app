@@ -1,7 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Navbar, Nav } from 'react-bootstrap';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.PNG';
 import styles from '../assets/scss/header.module.scss';
@@ -9,7 +7,7 @@ import styles from '../assets/scss/header.module.scss';
 const Header = () => {
   const userToken = localStorage.getItem('userToken');
   return (
-    <Navbar collapseOnSelect expand="sm">
+    <Navbar collapseOnSelect expand="sm" className={`${styles.theNavbar}`}>
       <Navbar.Brand href="/"><img className="logo" src={logo} alt="Car Rentals" /></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
@@ -41,12 +39,4 @@ const Header = () => {
   );
 };
 
-Header.propTypes = {
-  loggedIn: PropTypes.bool.isRequired,
-};
-
-const mapStateToProps = (state) => ({
-  loggedIn: state.signup.loggedIn,
-});
-
-export default connect(mapStateToProps)(Header);
+export default Header;
