@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Navbar, Nav } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import logo from '../assets/images/logo.PNG';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import styles from '../assets/scss/header.module.scss';
 
-const Header = ({ loggedIn }) => (
+const Header = () => {
+  const userToken = localStorage.getItem('userToken')
+  return (
   <Navbar collapseOnSelect expand="sm">
   <Navbar.Brand href="/"><img className="logo" src={logo} alt="Car Rentals" /></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -14,7 +16,7 @@ const Header = ({ loggedIn }) => (
     <Nav className="mr-auto" />
     <Nav className="d-flex justify-content-end">
       {
-        !(loggedIn)
+        userToken === undefined || userToken === 'undefined'
           ? (
             <>
               <Link className="nav-link white" to="/login">SIGN IN</Link>
@@ -36,7 +38,7 @@ const Header = ({ loggedIn }) => (
     </Nav>
   </Navbar.Collapse>
 </Navbar>
-);
+)};
 
 Header.propTypes = {
   loggedIn: PropTypes.bool.isRequired,

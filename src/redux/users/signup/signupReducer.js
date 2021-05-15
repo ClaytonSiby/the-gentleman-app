@@ -4,7 +4,7 @@ const initialState = {
   loading: false,
   loggedIn: false,
   user: {},
-  userToken: '',
+  userToken: localStorage.getItem('userToken'),
   error: '',
 };
 
@@ -22,7 +22,7 @@ const signupReducer = (state = initialState, action) => {
         loading: false,
         loggedIn: true,
         user: action.payload,
-        userToken: action.payload.auth_token,
+        userToken: localStorage.setItem('userToken', action.payload.auth_token),
         error: '',
       };
 

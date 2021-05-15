@@ -12,7 +12,7 @@ import signupReducer from './users/signup/signupReducer';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['suitItem', 'addAppointment', 'removeAppointment', 'appointments', 'suits', 'login', 'signup'],
+  whitelist: ['suitItem', 'addAppointment', 'removeAppointment', 'appointments', 'suits', 'login', 'signup', 'userToken'],
 };
 
 const rootReducer = combineReducers({

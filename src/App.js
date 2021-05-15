@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { memo } from 'react';
+import { connect } from 'react-redux';
 import { Route, Router, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { Container } from 'react-bootstrap';
@@ -13,9 +14,9 @@ import styles from './assets/scss/app.module.scss';
 
 const history = createBrowserHistory();
 
-const App = () => (
+const App = memo(({ loggedIn }) => (
   <Container fluid className={`${styles.app}`}>
-    <Router history={history}>
+    <Router history={history} >
       <Switch>
         <Route
           exact
@@ -61,12 +62,19 @@ const App = () => (
         )}/>
 
         <Route path="/logout" render={() => {
-          localStorage.setItem('userToken', '');
-          window.location.href = "/login";
+          window.location.reload();
+          localStorage.setItem('userToken', undefined);
+          window.location.href = '/login';
         }}/>
       </Switch>
     </Router>
   </Container>
-);
+));
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    loggedIn: state.signup.loggedIn
+  }
+}
+
+export default connect(mapStateToProps)(App);
