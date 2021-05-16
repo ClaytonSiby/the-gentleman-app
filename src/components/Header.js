@@ -17,14 +17,16 @@ const Header = () => {
         userToken === undefined || userToken === 'undefined'
           ? (
             <>
-              <Link className="nav-link white" to="/login">SIGN IN</Link>
+              <Link className="nav-link white" to="/">Home</Link>
+              <Link className="nav-link white" to="/login">LOGIN</Link>
               <Link className="nav-link" to="/signup">
-                <span className="btn-menu">SIGN UP</span>
+                <span className="btn-menu">SIGNUP</span>
               </Link>
             </>
           )
           : (
             <>
+              <Link className="nav-link white" to="/">Home</Link>
               <Link className="nav-link white" to="/suits">Suits</Link>
               <Link className="nav-link white" to="/appointments">Appointments</Link>
               <Link className="nav-link white" to="/logout">

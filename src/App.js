@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Route, Router, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { Container } from 'react-bootstrap';
 import Homepage from './pages/Homepage';
-import Appointments from './components/Appointments';
+import Appointments from './pages/Appointments';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import Suits from './components/Suits';
@@ -28,6 +28,7 @@ const App = () => (
         />
 
         <Route
+          exact
           path="/signup"
           render={() => (
             <MainLayout>
@@ -37,6 +38,7 @@ const App = () => (
         />
 
         <Route
+          exact
           path="/login"
           render={() => (
             <MainLayout>
@@ -46,6 +48,7 @@ const App = () => (
         />
 
         <Route
+          exact
           path="/suits"
           render={() => (
             <MainLayout>
@@ -55,6 +58,7 @@ const App = () => (
         />
 
         <Route
+          exact
           path="/appointments"
           render={() => (
             <MainLayout>
@@ -64,6 +68,7 @@ const App = () => (
         />
 
         <Route
+          exact
           path="/logout"
           render={() => {
             window.location.reload();
@@ -76,4 +81,4 @@ const App = () => (
   </Container>
 );
 
-export default memo(App);
+export default App;
