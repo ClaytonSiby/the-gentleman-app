@@ -13,7 +13,7 @@ const App = () => (
   <Container fluid className={`${styles.app}`}>
     <Router history={history}>
       <Header />
-        <RouteGenerator />
+      <RouteGenerator />
       <Footer />
     </Router>
   </Container>
