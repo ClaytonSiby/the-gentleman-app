@@ -9,10 +9,10 @@ import Appointments from '../pages/Appointments';
 const RouteGenerator = () => (
   <Switch>
     <Route exact path="/" component={Homepage} />
-    <Route exact path="/suits" component={Suits} />
-    <Route exact path="/login" component={Login} />
-    <Route exact path="/signup" component={SignUp} />
-    <Route exact path="/appointments" component={Appointments} />
+    <Route path="/suits" component={Suits} />
+    <Route path="/login" component={Login} />
+    <Route path="/signup" component={SignUp} />
+    <Route path="/appointments" component={Appointments} />
     <Route
       exact
       path="/logout"
