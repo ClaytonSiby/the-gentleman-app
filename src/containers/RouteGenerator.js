@@ -14,7 +14,6 @@ const RouteGenerator = () => (
     <Route path="/signup" component={SignUp} />
     <Route path="/appointments" component={Appointments} />
     <Route
-      exact
       path="/logout"
       render={() => {
         localStorage.setItem('userToken', undefined);
