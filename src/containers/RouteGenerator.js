@@ -17,6 +17,7 @@ const RouteGenerator = () => (
       exact
       path="/logout"
       render={() => {
+        
         localStorage.setItem('userToken', undefined);
         window.location.href = '/login';
       }}
