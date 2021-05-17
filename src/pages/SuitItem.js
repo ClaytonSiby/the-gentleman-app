@@ -2,14 +2,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const SuitItem = () => {
-    const suitItemData = useSelector(state => state.suitItem )
-    return (
-        <div>
-            {
+  const suitItemData = useSelector((state) => state.suitItem);
+  return (
+    <div>
+      {
                 JSON.stringify(suitItemData)
             }
-        </div>
-    )
-}
+    </div>
+  );
+};
 
-export default SuitItem
+export default SuitItem;

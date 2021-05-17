@@ -19,10 +19,10 @@ const getsuitItem = (id, authToken) => (dispatch) => {
   dispatch(suitItemRequest());
   axios.get(`https://the-gentleman-api.herokuapp.com/suits/${id}`, {
     headers: {
-      "Authorization": `Basic ${authToken}`,
-      "Content-Type": "application/json"
-    }
-   })
+      Authorization: `Basic ${authToken}`,
+      'Content-Type': 'application/json',
+    },
+  })
     .then((response) => {
       dispatch(suitItemSuccess(response.data));
     })

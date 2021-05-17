@@ -82,7 +82,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   suitsRequest: (data) => dispatch(fetchSuits(data)),
-  suitItemRequest: (id, token) => dispatch(getsuitItem(id, token))
+  suitItemRequest: (id, token) => dispatch(getsuitItem(id, token)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Suits);

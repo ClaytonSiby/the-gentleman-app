@@ -19,9 +19,9 @@ const fetchAppointments = (authToken) => (dispatch) => {
   dispatch(fetchAppointmentsRequest());
   axios.get('https://the-gentleman-api.herokuapp.com/appointments', {
     headers: {
-      "Authorization": `Basic ${authToken}`,
-      "Content-Type": "application/json"
-    }
+      Authorization: `Basic ${authToken}`,
+      'Content-Type': 'application/json',
+    },
   })
     .then((response) => {
       dispatch(fetchAppointmentsSuccess(response.data));
