@@ -46,9 +46,13 @@ const Suits = ({ suitsData, suitsRequest }) => {
                             href="/"
                             className={`${styles.appointmentIcon} m-5`}
                           >
-                            <i className="far fa-heart" />
+                            <i className="text-warning far fa-heart" />
                           </a>
                         </p>
+                      </div>
+                      <br />
+                      <div>
+                        <a href="/appointments">Details</a>
                       </div>
                     </div>
                   </div>
