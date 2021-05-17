@@ -26,7 +26,7 @@ const suitItemReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        suitItem: '',
+        suitItem: {},
         error: action.payload,
       };
 
