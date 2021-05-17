@@ -8,12 +8,12 @@ const Appointments = () => {
   const authToken = useSelector((state) => state.signup.user.auth_token);
   useEffect(() => {
     setTimeout(() => {
-      async () => {
+      (async () => {
         await dispatch(fetchAppointments(authToken));
-      };
+      })();
       setLoadingComplete(true);
     }, 2000);
-  });
+  }, []);
 
   const appointments = useSelector((state) => state.appointments.appointments);
   return (

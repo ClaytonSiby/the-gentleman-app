@@ -74,7 +74,7 @@ Suits.propTypes = {
     error: PropTypes.string.isRequired,
   }).isRequired,
   suitsRequest: PropTypes.func.isRequired,
-  suitItemRequest: PropTypes.func.isRequired
+  suitItemRequest: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
