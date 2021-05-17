@@ -4,6 +4,7 @@ import fetchAppointments from '../redux/appointments/get/appointmentActions';
 
 const Appointments = () => {
   const [loadingComplete, setLoadingComplete] = useState(false);
+  const dispatch = useDispatch();
   const authToken = useSelector((state) => state.signup.user.auth_token);
   useEffect(() => {
     setTimeout(() => {
