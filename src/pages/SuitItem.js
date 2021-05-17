@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-const SuitItem = ({ id }) => {
+const SuitItem = () => {
+    const suitItemData = useSelector(state => state.suitItem )
     return (
         <div>
-            This is the suit details page.
+            {
+                JSON.stringify(suitItemData)
+            }
         </div>
     )
 }
