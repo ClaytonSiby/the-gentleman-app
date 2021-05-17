@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { connect, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import ReactLoading from 'react-loading';
 import { Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import fetchSuits from '../redux/suits/get/suitActions';
+import getsuitItem from '../redux/suitItem/suitItemActions';
 import styles from '../assets/scss/suits.module.scss';
 
-const Suits = ({ suitsData, suitsRequest }) => {
+const Suits = ({ suitsData, suitsRequest, suitItemRequest }) => {
   const [loadingComplete, setLoadingComplete] = useState(false);
   const authToken = useSelector((state) => state.signup.user.auth_token);
 
@@ -52,7 +54,7 @@ const Suits = ({ suitsData, suitsRequest }) => {
                       </div>
                       <br />
                       <div>
-                        <a href="/appointments">Details</a>
+                        <Link to={`/suits/${data.id}`} onClick={() => suitItemRequest(data.id, authToken)}>Details</Link>
                       </div>
                     </div>
                   </div>
@@ -80,6 +82,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   suitsRequest: (data) => dispatch(fetchSuits(data)),
+  suitItemRequest: (id, token) => dispatch(getsuitItem(id, token))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Suits);
