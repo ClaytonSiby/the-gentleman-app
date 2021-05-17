@@ -2,7 +2,7 @@ import suitItemTypes from './suitItemTypes';
 
 const initialState = {
   loading: false,
-  suitItem: {},
+  suit: {},
   error: '',
 };
 
@@ -18,7 +18,7 @@ const suitItemReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        suitItem: action.payload,
+        suit: action.payload,
         error: '',
       };
 
@@ -26,7 +26,7 @@ const suitItemReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        suitItem: {},
+        suit: {},
         error: action.payload,
       };
 
