@@ -9,7 +9,7 @@ import Appointments from '../pages/Appointments';
 
 const RouteGenerator = () => (
   <Switch>
-    <Route exact exact path="/" component={Homepage} />
+    <Route exact path="/" component={Homepage} />
     <Route exact path="/suits" component={Suits} />
     <Route exact path="/login" component={Login} />
     <Route exact path="/signup" component={SignUp} />
