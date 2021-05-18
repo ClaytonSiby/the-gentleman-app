@@ -26,22 +26,22 @@ const SuitItem = () => {
           </h4>
           <div>
             <p>
-              available color:
-              { suitItemData.color }
+              available color:&nbsp;
+              <span className={`${styles.item}`}>{ suitItemData.color }</span>
             </p>
             <p>
-              price: $
-              { suitItemData.price }
+              price:&nbsp;$<span className={`${styles.item}`}>{ suitItemData.price }</span>
             </p>
             <p>
-              available size:
-              { suitItemData.size }
+              available size:&nbsp;
+              <span className={`${styles.item}`}>{ suitItemData.size }</span>
             </p>
             <p>
-              type:
-              { suitItemData.suit_type }
+              type:&nbsp; 
+              <span className={`${styles.item}`}>{ suitItemData.suit_type }</span>
             </p>
-            <p>{ suitItemData.description }</p>
+            <p><span className={`${styles.item}`}>{ suitItemData.description }</span></p>
+            <button className="btn btn-md btn-default border">Try it Out</button>
           </div>
         </Col>
       </Row>
