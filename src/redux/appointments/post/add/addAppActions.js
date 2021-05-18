@@ -18,17 +18,17 @@ const addAppointmentFailure = (error) => ({
 const postAppointment = (id, authToken) => (dispatch) => {
   dispatch(addAppointmentRequest());
   axios({
-    method: "POST",
+    method: 'POST',
     url: 'https://the-gentleman-api.herokuapp.com/appointments',
     headers: {
       Authorization: `Basic ${authToken}`,
       'Content-Type': 'application/json',
     },
     data: {
-      suit_id: `${id}`
-    }
+      suit_id: `${id}`,
+    },
   })
-  .then((response) => {
+    .then((response) => {
       dispatch(addAppointmentSuccess(response.data));
     })
     .catch((error) => {

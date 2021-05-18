@@ -1,11 +1,12 @@
-import React from 'react'
-import { useSelector, connect } from 'react-redux'
-import { Container, Col, Row } from 'react-bootstrap'
-import postAppointment from '../redux/appointments/post/add/addAppActions'
-import styles from '../assets/scss/suitItem.module.scss'
+import React from 'react';
+import { useSelector, connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Container, Col, Row } from 'react-bootstrap';
+import postAppointment from '../redux/appointments/post/add/addAppActions';
+import styles from '../assets/scss/suitItem.module.scss';
 
 const SuitItem = ({ createAppointment }) => {
-  const suitItemData = useSelector(state => state.suitItem.suit);
+  const suitItemData = useSelector((state) => state.suitItem.suit);
   const authToken = localStorage.getItem('userToken');
 
   return (
@@ -16,11 +17,15 @@ const SuitItem = ({ createAppointment }) => {
           md={6}
           className={`${styles.suitImage}`}
           style={{
-            background: `linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(${suitItemData.imageUrl})`
+            background: `linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(${suitItemData.imageUrl})`,
           }}
         />
         <Col sm={12} md={6} className={`${styles.suitDescription} p-3`}>
-          <h4> {suitItemData.name} </h4>
+          <h4>
+            {' '}
+            {suitItemData.name}
+            {' '}
+          </h4>
           <div>
             <p>
               available color:&nbsp;
@@ -44,9 +49,9 @@ const SuitItem = ({ createAppointment }) => {
               </span>
             </p>
             <button
-              type='button'
-              onClick={ () => createAppointment(suitItemData.id, authToken) }
-              className='btn btn-md btn-default border'
+              type="button"
+              onClick={() => createAppointment(suitItemData.id, authToken)}
+              className="btn btn-md btn-default border"
             >
               Try it Out
             </button>
@@ -54,16 +59,17 @@ const SuitItem = ({ createAppointment }) => {
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    createAppointment: (suit_id, auth_token) => {
-      // console.log(auth_token);
-      dispatch(postAppointment(suit_id, auth_token))
-    }
-  }
-}
+SuitItem.propTypes = {
+  createAppointment: PropTypes.func.isRequired,
+};
 
-export default connect(null, mapDispatchToProps)(SuitItem)
+const mapDispatchToProps = (dispatch) => ({
+  createAppointment: (suitId, authToken) => {
+    dispatch(postAppointment(suitId, authToken));
+  },
+});
+
+export default connect(null, mapDispatchToProps)(SuitItem);
