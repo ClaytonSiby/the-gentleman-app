@@ -2,7 +2,7 @@ import appointments from './appointmentTypes';
 
 const initialState = {
   loading: false,
-  appointments: [],
+  data: [],
   error: '',
 };
 
@@ -18,7 +18,7 @@ const appointmentReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        appointments: action.payload,
+        data: action.payload,
         error: '',
       };
 
@@ -26,7 +26,7 @@ const appointmentReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        appointments: [],
+        data: [],
         error: action.payload,
       };
 

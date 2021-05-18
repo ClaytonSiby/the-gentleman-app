@@ -17,7 +17,7 @@ const Appointments = () => {
     }, 3000);
   }, []);
 
-  const appointments = useSelector((state) => state.appointments.appointments);
+  const appointments = useSelector((state) => state.appointments);
   return (
     <div>
       {!loadingComplete ? (
