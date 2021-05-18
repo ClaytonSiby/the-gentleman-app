@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import fetchAppointments from '../redux/appointments/get/appointmentActions';
 import ReactLoading from 'react-loading';
+import fetchAppointments from '../redux/appointments/get/appointmentActions';
 import styles from '../assets/scss/appointments.module.scss';
 
 const Appointments = () => {

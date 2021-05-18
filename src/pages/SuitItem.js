@@ -42,7 +42,7 @@ const SuitItem = () => {
               <span className={`${styles.item}`}>{ suitItemData.suit_type }</span>
             </p>
             <p><span className={`${styles.item}`}>{ suitItemData.description }</span></p>
-            <button className="btn btn-md btn-default border">Try it Out</button>
+            <button type="button" className="btn btn-md btn-default border">Try it Out</button>
           </div>
         </Col>
       </Row>
