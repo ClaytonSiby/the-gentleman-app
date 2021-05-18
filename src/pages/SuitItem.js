@@ -6,7 +6,7 @@ import styles from '../assets/scss/suitItem.module.scss'
 
 const SuitItem = ({ createAppointment }) => {
   const suitItemData = useSelector(state => state.suitItem.suit);
-  const authToken = useSelector(state => state.signup.user.auth_token);
+  const authToken = localStorage.getItem('userToken');
 
   return (
     <Container className={`${styles.suitContainer}`}>
@@ -45,7 +45,7 @@ const SuitItem = ({ createAppointment }) => {
             </p>
             <button
               type='button'
-              onClick={ () => createAppointment(suitItemData.id) }
+              onClick={ () => createAppointment(suitItemData.id, authToken) }
               className='btn btn-md btn-default border'
             >
               Try it Out
@@ -59,7 +59,10 @@ const SuitItem = ({ createAppointment }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createAppointment: (auth_token) => dispatch(postAppointment(auth_token))
+    createAppointment: (suit_id, auth_token) => {
+      // console.log(auth_token);
+      dispatch(postAppointment(suit_id, auth_token))
+    }
   }
 }
 
