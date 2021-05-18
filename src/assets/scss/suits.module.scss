@@ -2,6 +2,11 @@ $break-point-tablet: 768px;
 $break-point-mobile: 414px;
 $break-point-desktop: 992px;
 
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
 .suitsContainer {
   display: grid;
   grid-template-columns: auto auto;

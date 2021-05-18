@@ -24,8 +24,8 @@ const Suits = ({ suitsData, suitsRequest, suitItemRequest }) => {
   return (
     <div className="text-light">
       {!loadingComplete ? (
-        <div>
-          <ReactLoading type="bars" color="green" height={70} width={80} />
+        <div className={`${styles.loading}`}>
+          <ReactLoading type="bars" color="grey" height={70} width={80} />
         </div>
       ) : (
         <Row>

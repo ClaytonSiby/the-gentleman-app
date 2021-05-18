@@ -30,14 +30,15 @@ const SuitItem = () => {
               <span className={`${styles.item}`}>{ suitItemData.color }</span>
             </p>
             <p>
-              price:&nbsp;$<span className={`${styles.item}`}>{ suitItemData.price }</span>
+              price:&nbsp;$
+              <span className={`${styles.item}`}>{ suitItemData.price }</span>
             </p>
             <p>
               available size:&nbsp;
               <span className={`${styles.item}`}>{ suitItemData.size }</span>
             </p>
             <p>
-              type:&nbsp; 
+              type:&nbsp;
               <span className={`${styles.item}`}>{ suitItemData.suit_type }</span>
             </p>
             <p><span className={`${styles.item}`}>{ suitItemData.description }</span></p>
