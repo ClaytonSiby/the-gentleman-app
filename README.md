@@ -58,7 +58,7 @@ then:
 - Twitter: [@Twitter](https://twitter.com/ClaytonSiby)
 
 ## :+1: Acknowledgements
--> The success of this project is possible thanks to the platforms and people listed below and more:
+> The success of this project is possible thanks to the platforms and people listed below and more:
 - [stackoverflow](https://stackoverflow.com/)
 - [microverse](https://microverse.org)
 - [the dev community](https://dev.to/)
