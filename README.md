@@ -57,6 +57,13 @@ then:
 
 - Twitter: [@Twitter](https://twitter.com/ClaytonSiby)
 
+## :thumbup: Acknowledgements
+-> The success of this project is possible thanks to the platforms and people listed below and more:
+- [stackoverflow](https://stackoverflow.com/)
+- [microverse](https://microverse.org)
+- [the dev community](https://dev.to/)
+- [medium](https://medium.com)
+
 ## :handshake: Contributing 
 
 * Contributions, issues and feature requests are welcome! Feel free to check the [issues page](https://github.com/ClaytonSiby/the-gentleman-app/issues)
