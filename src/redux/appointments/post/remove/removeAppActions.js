@@ -1,29 +1,35 @@
-import axios from 'axios';
-import removeAppTypes from './removeAppTypes';
+import axios from 'axios'
+import removeAppTypes from './removeAppTypes'
 
 const removeAppointmentRequest = () => ({
-  type: removeAppTypes.REMOVE_APPOINTMENT_REQUEST,
-});
+  type: removeAppTypes.REMOVE_APPOINTMENT_REQUEST
+})
 
-const removeAppointmentSuccess = (data) => ({
+const removeAppointmentSuccess = data => ({
   type: removeAppTypes.REMOVE_APPOINTMENT_SUCCESS,
-  payload: data,
-});
+  payload: data
+})
 
-const removeAppointmentFailure = (error) => ({
+const removeAppointmentFailure = error => ({
   type: removeAppTypes.REMOVE_APPOINTMENT_FAILURE,
-  payload: error,
-});
+  payload: error
+})
 
-const removeAppointment = (id) => (dispatch) => {
-  dispatch(removeAppointmentRequest());
-  axios.delete('https://the-gentleman-api.herokuapp.com/appointmens', id)
-    .then((response) => {
-      dispatch(removeAppointmentSuccess(response.data));
+const removeAppointment = (id, authToken) => dispatch => {
+  dispatch(removeAppointmentRequest())
+  axios
+    .delete(`https://the-gentleman-api.herokuapp.com/appointments/${id}`, {
+      headers: {
+        Authorization: `Basic ${authToken}`,
+        'Content-Type': 'application/json'
+      }
     })
-    .catch((error) => {
-      dispatch(removeAppointmentFailure(error.message));
-    });
-};
+    .then(response => {
+      dispatch(removeAppointmentSuccess(response.data))
+    })
+    .catch(error => {
+      dispatch(removeAppointmentFailure(error.response))
+    })
+}
 
-export default removeAppointment;
+export default removeAppointment
