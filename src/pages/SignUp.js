@@ -57,8 +57,8 @@ const SignUp = () => {
           />
         </Form.Group>
         <Button
-          variant="primary"
-          className="my-3"
+          variant="default"
+          className="my-3 bg-light border"
           size="md"
           type="submit"
           block

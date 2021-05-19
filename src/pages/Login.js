@@ -37,8 +37,8 @@ const Login = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control ref={password} type="password" placeholder="Password" />
         </Form.Group>
-        <button className="btn btn-primary my-3" type="submit">
-          Submit
+        <button className="btn btn-default border bg-light my-3" type="submit">
+          Login
         </button>
       </Form>
     </div>
