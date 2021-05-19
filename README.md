@@ -1,5 +1,9 @@
 # The Gentleman
 
+This is a web based application built with business specifications. The Gentleman is a full-stack application that serves the purpose of giving users a wide variety of gentleman fashion that they can view and make an appointment to try it on or negotiate with the seller. Authentication is required i.e all users need to register first to view all the gentleman suits on the site. The application makes use of [The Gentleman API](https://github.com/ClaytonSiby/gentleman-api/tree/feature/gentleman) to authenticate and authorize users and give them access to the resources available on the various endpoints provided. For authentication and authorization, I made use of the JWT standard that generates an auth token to register or login users. For a visual demo of the app in use, please navigate to the Project Design section and get familiar with how to navigate on different routes.
+
+Built with react on the front-end and rails on the backend.
+
 ## Technologies used:
 > technologies used in building this project include but are not limited to: 
 - reactJS/Redux
@@ -16,17 +20,23 @@
 ## Project Presentation:
 [Video Presentation]()
 ## Application Production Link
-[SIBYMeals](https://the-gentleman-app.netlify.app/)
+[The Gentleman](https://the-gentleman.netlify.app/)
 
 ## Project Design
 ![MealsCatalogue]()
+
+## API Repository
+[The Gentleman API](https://github.com/ClaytonSiby/gentleman-api/tree/feature/gentleman)
+
+## API Documentation
+[The Gentleman API Documentation](https://documenter.getpostman.com/view/13879644/TzRRBnep)
 
 ## Project SetUp
 You can clone the project on your local machine by running:
 
 - `git clone https://github.com/ClaytonSiby/the-gentleman-app.git`
 then:
--  `cd The_Calculator`
+-  `cd the-gentleman-app`
 
 ### install all dependencies by running:
 - `yarn install`
