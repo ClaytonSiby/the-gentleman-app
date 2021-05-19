@@ -25,7 +25,7 @@ Built with react on the front-end and rails on the backend.
 [The Gentleman](https://the-gentleman.netlify.app/)
 
 ## Project Design
-![MealsCatalogue](./src/assets/images/project_screenshot.png)
+![TheGentleman](./src/assets/images/project_screenshot.png)
 
 ## API Repository
 [The Gentleman API](https://github.com/ClaytonSiby/gentleman-api/tree/feature/gentleman)
@@ -63,6 +63,7 @@ then:
 - [microverse](https://microverse.org)
 - [the dev community](https://dev.to/)
 - [medium](https://medium.com)
+- [Murat Korkmaz](https://www.behance.net/muratk)
 
 ## :handshake: Contributing 
 
