@@ -18,12 +18,12 @@ Built with react on the front-end and rails on the backend.
 - axios
 
 ## Project Presentation:
-[Video Presentation]()
+[Video Presentation](https://www.loom.com/share/02b857a8d72046fd93cc59957eab33ac)
 ## Application Production Link
 [The Gentleman](https://the-gentleman.netlify.app/)
 
 ## Project Design
-![MealsCatalogue]()
+![MealsCatalogue](./src/assets/images/project_screenshot.png)
 
 ## API Repository
 [The Gentleman API](https://github.com/ClaytonSiby/gentleman-api/tree/feature/gentleman)
