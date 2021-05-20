@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Homepage renders consistently to the DOM 1`] = `
+<div
+  className="homepage p-0 m-0 row"
+>
+  <div
+    className="banner col-12"
+  >
+    <div
+      className="text-center"
+    >
+      <h1
+        className="my-3"
+      >
+        The Gentleman
+      </h1>
+      <p>
+        Character. Intelligence. Strength. Style
+      </p>
+      <p>
+        That makes a gentleman.
+      </p>
+    </div>
+  </div>
+  <div
+    className="welcomeText col"
+  >
+    <button
+      className="my-2 btn btn-md btn-default border"
+      type="button"
+    >
+      Explore More
+    </button>
+    <p
+      className="m-2"
+    >
+      Explore the style, the elegant look for your special occassion. We offer high quility products. The gentleman is here to give you a sophisticated appearance and lighten up the mood of your day. Enjoy!
+    </p>
+  </div>
+</div>
+`;
