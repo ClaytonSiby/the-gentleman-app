@@ -12,5 +12,5 @@ describe('Homepage', () => {
     const test = renderer.create(<Homepage />).toJSON();
 
     expect(test).toMatchSnapshot();
-  })
+  });
 });
