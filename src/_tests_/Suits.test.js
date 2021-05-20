@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
 import { render } from '@testing-library/react';
 import Suits from '../components/Suits';
@@ -37,6 +38,16 @@ describe('Suits', () => {
       </Provider>,
     );
   });
+
+  test('renders consistently to the DOM', () => {
+    const test = renderer.create(
+      <Provider store={store}>
+        <Suits />
+      </Provider>
+    ).toJSON();
+
+    expect(test).toMatchSnapshot();
+  })
 });
 
 export default store;
