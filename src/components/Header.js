@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.PNG';
 import styles from '../assets/scss/header.module.scss';
 
@@ -17,21 +17,21 @@ const Header = () => {
         userToken === undefined || userToken === 'undefined'
           ? (
             <>
-              <Link className="nav-link white" to="/">Home</Link>
-              <Link className="nav-link white" to="/login">LOGIN</Link>
-              <Link className="nav-link" to="/signup">
-                <span className="btn-menu">SIGNUP</span>
-              </Link>
+              <a className="nav-link white" href="/">Home</a>
+              <a className="nav-link white" href="/login">LOGIN</a>
+              <a className="nav-link" href="/signup">
+                SIGNUP
+              </a>
             </>
           )
           : (
             <>
-              <Link className="nav-link white" to="/">Home</Link>
-              <Link className="nav-link white" to="/suits">Suits</Link>
-              <Link className="nav-link white" to="/appointments">Appointments</Link>
-              <Link className="nav-link white" to="/logout">
+              <a className="nav-link white" href="/">Home</a>
+              <a className="nav-link white" href="/suits">Suits</a>
+              <a className="nav-link white" href="/appointments">Appointments</a>
+              <a className="nav-link white" href="/logout">
                 LOGOUT
-              </Link>
+              </a>
             </>
           )
       }
