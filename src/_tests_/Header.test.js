@@ -12,5 +12,5 @@ describe('Header', () => {
     const test = renderer.create(<Header />).toJSON();
 
     expect(test).toMatchSnapshot();
-  })
+  });
 });
