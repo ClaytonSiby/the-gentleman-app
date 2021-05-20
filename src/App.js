@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { Container } from 'react-bootstrap';
 import Header from './components/Header';
@@ -11,11 +11,11 @@ const history = createBrowserHistory();
 
 const App = () => (
   <Container fluid className={`${styles.app}`}>
-    <BrowserRouter history={history}>
+    <Router history={history}>
       <Header />
       <RouteGenerator />
       <Footer />
-    </BrowserRouter>
+    </Router>
   </Container>
 );
 
