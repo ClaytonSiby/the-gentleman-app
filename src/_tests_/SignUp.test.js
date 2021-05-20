@@ -5,11 +5,11 @@ import SignUp from '../pages/SignUp';
 import store from './Suits.test';
 
 describe('SignUp', () => {
-    it('Renders the SignUp page successfully', () => {
-        render(
-            <Provider store={store}>
-                <SignUp />
-            </Provider>
-        )
-    })
-})
+  it('Renders the SignUp page successfully', () => {
+    render(
+      <Provider store={store}>
+        <SignUp />
+      </Provider>,
+    );
+  });
+});
