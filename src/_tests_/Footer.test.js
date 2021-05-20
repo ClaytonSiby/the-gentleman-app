@@ -12,5 +12,5 @@ describe('Footer', () => {
     const test = renderer.create(<Footer />).toJSON();
 
     expect(test).toMatchSnapshot();
-  })
+  });
 });
