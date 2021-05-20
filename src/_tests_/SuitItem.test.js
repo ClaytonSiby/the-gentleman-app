@@ -5,11 +5,11 @@ import SuitItem from '../pages/SuitItem';
 import store from './Suits.test';
 
 describe('SuitItem', () => {
-    it('Renders the SuitItem page successfully', () => {
-        render(
-            <Provider store={store}>
-                <SuitItem />
-            </Provider>
-        )
-    })
-})
+  it('Renders the SuitItem page successfully', () => {
+    render(
+      <Provider store={store}>
+        <SuitItem />
+      </Provider>,
+    );
+  });
+});
