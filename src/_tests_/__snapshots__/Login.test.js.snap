@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Renders consistently to the DOM 1`] = `
+<div
+  className="login"
+>
+  <h2
+    className="mb-3"
+  >
+    Login
+  </h2>
+  <form
+    className=""
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        className="form-label"
+        htmlFor="formBasicEmail"
+      >
+        Email address
+      </label>
+      <input
+        className="form-control"
+        id="formBasicEmail"
+        placeholder="Enter email"
+        type="email"
+      />
+      <small
+        className="text-muted form-text"
+      >
+        We'll never share your email with anyone else.
+      </small>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className="form-label"
+        htmlFor="formBasicPassword"
+      >
+        Password
+      </label>
+      <input
+        className="form-control"
+        id="formBasicPassword"
+        placeholder="Password"
+        type="password"
+      />
+    </div>
+    <button
+      className="btn btn-default border bg-light my-3"
+      type="submit"
+    >
+      Login
+    </button>
+  </form>
+</div>
+`;
