@@ -43,11 +43,11 @@ describe('Suits', () => {
     const test = renderer.create(
       <Provider store={store}>
         <Suits />
-      </Provider>
+      </Provider>,
     ).toJSON();
 
     expect(test).toMatchSnapshot();
-  })
+  });
 });
 
 export default store;

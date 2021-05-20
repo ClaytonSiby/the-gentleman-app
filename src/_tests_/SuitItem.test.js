@@ -18,9 +18,9 @@ describe('SuitItem', () => {
     const test = renderer.create(
       <Provider store={store}>
         <SuitItem />
-      </Provider>
+      </Provider>,
     ).toJSON();
 
     expect(test).toMatchSnapshot();
-  })
+  });
 });
