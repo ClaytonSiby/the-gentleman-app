@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import { withRouter } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Form } from 'react-bootstrap';
 import requestToLogin from '../redux/users/login/loginActions';
@@ -45,4 +44,4 @@ const Login = () => {
   );
 };
 
-export default withRouter(Login);
+export default Login;
