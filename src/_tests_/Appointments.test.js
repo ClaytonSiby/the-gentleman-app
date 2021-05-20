@@ -18,9 +18,9 @@ describe('Appointments', () => {
     const test = renderer.create(
       <Provider store={store}>
         <Appointments />
-      </Provider>
+      </Provider>,
     ).toJSON();
 
     expect(test).toMatchSnapshot();
-  })
+  });
 });
