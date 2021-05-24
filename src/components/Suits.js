@@ -1,40 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import { connect, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import ReactLoading from 'react-loading';
-import { Row, Col } from 'react-bootstrap';
-import PropTypes from 'prop-types';
-import fetchSuits from '../redux/suits/get/suitActions';
-import getsuitItem from '../redux/suitItem/suitItemActions';
-import styles from '../assets/scss/suits.module.scss';
+import React, { useEffect, useState } from 'react'
+import { connect, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import ReactLoading from 'react-loading'
+import { Row, Col } from 'react-bootstrap'
+import PropTypes from 'prop-types'
+import fetchSuits from '../redux/suits/get/suitActions'
+import getsuitItem from '../redux/suitItem/suitItemActions'
+import styles from '../assets/scss/suits.module.scss'
 
-const Suits = ({ suitsData, suitsRequest, suitItemRequest }) => {
-  const [loadingComplete, setLoadingComplete] = useState(false);
-  const authToken = useSelector((state) => state.signup.user.auth_token);
+const Suits = ({ suitsData, suitsRequest }) => {
+  const [loadingComplete, setLoadingComplete] = useState(false)
+  const authToken = useSelector(state => state.signup.user.auth_token)
 
   useEffect(() => {
     setTimeout(() => {
-      (async () => {
-        await suitsRequest(authToken);
-      })();
-      setLoadingComplete(true);
-    }, 2000);
-  }, []);
+      ;(async () => {
+        await suitsRequest(authToken)
+      })()
+      setLoadingComplete(true)
+    }, 2000)
+  }, [])
 
   return (
-    <div className="text-light">
+    <div className='text-light'>
       {!loadingComplete ? (
         <div className={`${styles.loading}`}>
-          <ReactLoading type="bars" color="grey" height={70} width={80} />
+          <ReactLoading type='bars' color='grey' height={70} width={80} />
         </div>
       ) : (
         <Row>
           <Col sm={12} className={`${styles.header}`} />
           <Col sm={12}>
             <div className={`${styles.suitsContainer} p-0`}>
-              {suitsData
-                && suitsData.suits
-                && suitsData.suits.map((data) => (
+              {suitsData &&
+                suitsData.suits &&
+                suitsData.suits.map(data => (
                   <div
                     className={`${styles.suitThumbnail} my-1 p-2`}
                     key={data.id}
@@ -45,16 +45,21 @@ const Suits = ({ suitsData, suitsRequest, suitItemRequest }) => {
                         <p>
                           <span className={`${styles.title}`}>{data.name}</span>
                           <a
-                            href="/"
+                            href='/'
                             className={`${styles.appointmentIcon} m-5`}
                           >
-                            <i className="text-warning far fa-heart" />
+                            <i className='text-warning far fa-heart' />
                           </a>
                         </p>
                       </div>
                       <br />
                       <div>
-                        <Link to={`/suits/${data.id}`} onClick={() => suitItemRequest(data.id, authToken)}>Details</Link>
+                        <a
+                          // onClick={suitItemRequest(data.id, authToken)}
+                          href={`/suits/${data.id}`}
+                        >
+                          Details
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -64,26 +69,25 @@ const Suits = ({ suitsData, suitsRequest, suitItemRequest }) => {
         </Row>
       )}
     </div>
-  );
-};
+  )
+}
 
 Suits.propTypes = {
   suitsData: PropTypes.shape({
     loading: PropTypes.bool.isRequired,
     suits: PropTypes.instanceOf(Array).isRequired,
-    error: PropTypes.string.isRequired,
+    error: PropTypes.string.isRequired
   }).isRequired,
   suitsRequest: PropTypes.func.isRequired,
-  suitItemRequest: PropTypes.func.isRequired,
-};
+  suitItemRequest: PropTypes.func.isRequired
+}
 
-const mapStateToProps = (state) => ({
-  suitsData: state.suits,
-});
+const mapStateToProps = state => ({
+  suitsData: state.suits
+})
 
-const mapDispatchToProps = (dispatch) => ({
-  suitsRequest: (data) => dispatch(fetchSuits(data)),
-  suitItemRequest: (id, token) => dispatch(getsuitItem(id, token)),
-});
+const mapDispatchToProps = dispatch => ({
+  suitsRequest: data => dispatch(fetchSuits(data)),
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Suits);
+export default connect(mapStateToProps, mapDispatchToProps)(Suits)

@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
+import getsuitItem from '../redux/suitItem/suitItemActions';
 import { Container, Col, Row } from 'react-bootstrap';
 import postAppointment from '../redux/appointments/post/add/addAppActions';
 import styles from '../assets/scss/suitItem.module.scss';
 
-const SuitItem = ({ createAppointment }) => {
-  const suitItemData = useSelector((state) => state.suitItem.suit);
+const SuitItem = ({ createAppointment, suitItemRequest }) => {
   const authToken = localStorage.getItem('userToken');
+  const { id } = useParams();
+
+  useEffect(() => {
+    (async () => {
+      await suitItemRequest(id, authToken)
+    })();
+  },[])
+
+  const suitItemData = useSelector((state) => state.suitItem.suit);
 
   return (
     <Container className={`${styles.suitContainer}`}>
@@ -18,6 +28,9 @@ const SuitItem = ({ createAppointment }) => {
           className={`${styles.suitImage}`}
           style={{
             background: `linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(${suitItemData.imageUrl})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat'
           }}
         />
         <Col sm={12} md={6} className={`${styles.suitDescription} p-3`}>
@@ -70,6 +83,7 @@ const mapDispatchToProps = (dispatch) => ({
   createAppointment: (suitId, authToken) => {
     dispatch(postAppointment(suitId, authToken));
   },
+  suitItemRequest: (id, token) => dispatch(getsuitItem(id, token))
 });
 
 export default connect(null, mapDispatchToProps)(SuitItem);
