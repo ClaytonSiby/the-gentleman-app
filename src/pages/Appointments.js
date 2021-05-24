@@ -14,19 +14,15 @@ const Appointments = () => {
   const authToken = useSelector((state) => state.signup.user.auth_token);
   const [reload, setReload] = useState(false);
   useEffect(() => {
-    setTimeout(() => {
       (async () => {
         await dispatch(fetchAppointments(authToken));
       })();
       setLoadingComplete(true);
-    }, 3000);
   }, [reload]);
 
   const handleAppointmentDelete = (id, token) => {
     dispatch(removeAppointment(id, token));
-    setTimeout(() => {
-      setReload(true);
-    }, 200);
+    setReload(true);
   };
 
   const appointments = useSelector((state) => state.appointments);

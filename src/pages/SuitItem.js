@@ -27,10 +27,7 @@ const SuitItem = ({ createAppointment, suitItemRequest }) => {
           md={6}
           className={`${styles.suitImage}`}
           style={{
-            background: `linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(${suitItemData.imageUrl})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center center',
-            backgroundRepeat: 'no-repeat'
+            background: `linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.6)), url(${suitItemData.imageUrl})`,
           }}
         />
         <Col sm={12} md={6} className={`${styles.suitDescription} p-3`}>
@@ -77,6 +74,7 @@ const SuitItem = ({ createAppointment, suitItemRequest }) => {
 
 SuitItem.propTypes = {
   createAppointment: PropTypes.func.isRequired,
+  suitItemRequest: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = (dispatch) => ({

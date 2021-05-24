@@ -5,7 +5,6 @@ import ReactLoading from 'react-loading'
 import { Row, Col } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import fetchSuits from '../redux/suits/get/suitActions'
-import getsuitItem from '../redux/suitItem/suitItemActions'
 import styles from '../assets/scss/suits.module.scss'
 
 const Suits = ({ suitsData, suitsRequest }) => {
@@ -13,12 +12,10 @@ const Suits = ({ suitsData, suitsRequest }) => {
   const authToken = useSelector(state => state.signup.user.auth_token)
 
   useEffect(() => {
-    setTimeout(() => {
       ;(async () => {
         await suitsRequest(authToken)
       })()
       setLoadingComplete(true)
-    }, 2000)
   }, [])
 
   return (
@@ -79,7 +76,6 @@ Suits.propTypes = {
     error: PropTypes.string.isRequired
   }).isRequired,
   suitsRequest: PropTypes.func.isRequired,
-  suitItemRequest: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
