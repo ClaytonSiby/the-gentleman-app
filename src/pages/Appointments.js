@@ -14,10 +14,10 @@ const Appointments = () => {
   const authToken = useSelector((state) => state.signup.user.auth_token);
   const [reload, setReload] = useState(false);
   useEffect(() => {
-      (async () => {
-        await dispatch(fetchAppointments(authToken));
-      })();
-      setLoadingComplete(true);
+    (async () => {
+      await dispatch(fetchAppointments(authToken));
+    })();
+    setLoadingComplete(true);
   }, [reload]);
 
   const handleAppointmentDelete = (id, token) => {

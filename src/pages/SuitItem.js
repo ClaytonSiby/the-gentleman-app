@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useSelector, connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
-import getsuitItem from '../redux/suitItem/suitItemActions';
 import { Container, Col, Row } from 'react-bootstrap';
+import getsuitItem from '../redux/suitItem/suitItemActions';
 import postAppointment from '../redux/appointments/post/add/addAppActions';
 import styles from '../assets/scss/suitItem.module.scss';
 
@@ -13,9 +13,9 @@ const SuitItem = ({ createAppointment, suitItemRequest }) => {
 
   useEffect(() => {
     (async () => {
-      await suitItemRequest(id, authToken)
+      await suitItemRequest(id, authToken);
     })();
-  },[])
+  }, []);
 
   const suitItemData = useSelector((state) => state.suitItem.suit);
 
@@ -74,14 +74,14 @@ const SuitItem = ({ createAppointment, suitItemRequest }) => {
 
 SuitItem.propTypes = {
   createAppointment: PropTypes.func.isRequired,
-  suitItemRequest: PropTypes.func.isRequired
+  suitItemRequest: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({
   createAppointment: (suitId, authToken) => {
     dispatch(postAppointment(suitId, authToken));
   },
-  suitItemRequest: (id, token) => dispatch(getsuitItem(id, token))
+  suitItemRequest: (id, token) => dispatch(getsuitItem(id, token)),
 });
 
 export default connect(null, mapDispatchToProps)(SuitItem);
