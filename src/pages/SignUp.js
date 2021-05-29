@@ -31,7 +31,7 @@ const SignUp = () => {
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="username">
           <Form.Label>Name</Form.Label>
-          <Form.Control ref={username} type="text" placeholder="Enter email" />
+          <Form.Control ref={username} type="text" placeholder="User name" />
         </Form.Group>
         <Form.Group controlId="email">
           <Form.Label>Email address</Form.Label>

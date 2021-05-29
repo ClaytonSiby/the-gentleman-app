@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-// import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.PNG';
 import styles from '../assets/scss/header.module.scss';
 
@@ -14,7 +13,7 @@ const Header = () => {
         <Nav className="mr-auto" />
         <Nav className="d-flex justify-content-end">
           {
-        userToken === undefined || userToken === 'undefined'
+        userToken === undefined || userToken === 'undefined' || userToken === '' || userToken === null
           ? (
             <>
               <a className="nav-link white" href="/">Home</a>
