@@ -26,6 +26,7 @@ const Appointments = () => {
   };
 
   const appointments = useSelector((state) => state.appointments);
+
   if (!loadingComplete) {
     return (
       <Container>
