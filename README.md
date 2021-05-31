@@ -21,6 +21,9 @@ Built with react on the front-end and rails on the backend.
 
 ## Project Presentation:
 [Video Presentation](https://www.loom.com/share/02b857a8d72046fd93cc59957eab33ac)
+
+## Re-review Video Presentation:
+[Re-review Video](https://www.loom.com/share/580310aabf6e4731a40f29f77db18dd5)
 ## Application Production Link
 [The Gentleman](https://the-gentleman.netlify.app/)
 
