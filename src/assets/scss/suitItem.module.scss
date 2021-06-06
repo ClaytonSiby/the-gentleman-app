@@ -18,5 +18,11 @@
     .item {
       color: gray;
     }
+
+    .button {
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
   }
 }

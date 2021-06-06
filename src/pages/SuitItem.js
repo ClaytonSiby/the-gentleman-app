@@ -61,7 +61,7 @@ const SuitItem = ({ createAppointment, suitItemRequest }) => {
             <button
               type="button"
               onClick={() => createAppointment(suitItemData.id, authToken)}
-              className="btn btn-md btn-default border"
+              className={`btn btn-md btn-default border-dark ${styles.button}`}
             >
               Try it Out
             </button>
