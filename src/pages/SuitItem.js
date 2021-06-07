@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Container, Col, Row } from 'react-bootstrap';
 import getsuitItem from '../redux/suitItem/suitItemActions';
 import postAppointment from '../redux/appointments/post/add/addAppActions';
@@ -54,6 +54,10 @@ const SuitItem = ({ createAppointment, suitItemRequest }) => {
               <span className={`${styles.item}`}>{suitItemData.suit_type}</span>
             </p>
             <p>
+              date:&nbsp;
+              <span>{ suitItemData.created_at }</span>
+            </p>
+            <p>
               <span className={`${styles.item}`}>
                 {suitItemData.description}
               </span>
@@ -63,7 +67,9 @@ const SuitItem = ({ createAppointment, suitItemRequest }) => {
               onClick={() => createAppointment(suitItemData.id, authToken)}
               className={`btn btn-md btn-default border-dark ${styles.button}`}
             >
-              Try it Out
+              <Link to="/appointments">
+                Try it Out
+              </Link>
             </button>
           </div>
         </Col>

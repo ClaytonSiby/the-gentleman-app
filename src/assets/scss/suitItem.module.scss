@@ -20,6 +20,12 @@
     }
 
     .button {
+      a {
+        display: block;
+        color: grey;
+        text-decoration: none;
+      }
+
       &:hover {
         transform: scale(1.02);
       }

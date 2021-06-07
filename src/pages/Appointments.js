@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  Row, Col, Card, Button, Container,
+  Row, Col, Card, Button, Container, Alert,
 } from 'react-bootstrap';
 import ReactLoading from 'react-loading';
+// import { Link } from 'react-router-dom';
 import fetchAppointments from '../redux/appointments/get/appointmentActions';
 import removeAppointment from '../redux/appointments/post/remove/removeAppActions';
 import styles from '../assets/scss/appointments.module.scss';
@@ -26,6 +27,10 @@ const Appointments = () => {
   };
 
   const appointments = useSelector((state) => state.appointments);
+  const appointmenMessage = useSelector(({ addAppointment }) => addAppointment.message);
+  const errorMessage = useSelector(({ addAppointment }) => addAppointment.error);
+  const [show, setShow] = useState(true);
+  const handleDismiss = () => setShow(false);
 
   if (!loadingComplete) {
     return (
@@ -49,14 +54,25 @@ const Appointments = () => {
   }
   return (
     <Container>
+      {errorMessage ? show && (
+        <Alert variant="danger" className="pl-1 py-0 pr-0 d-flex justify-content-between">
+          <span>{errorMessage}</span>
+        &nbsp;&nbsp;
+          <Button onClick={handleDismiss}>X</Button>
+        </Alert>
+      ) : show && (
+      <Alert variant="success" className="pl-1 py-0 pr-0 d-flex justify-content-between">
+        <span>{appointmenMessage.message}</span>
+        &nbsp;&nbsp;
+        <Button onClick={handleDismiss}>x</Button>
+      </Alert>
+      )}
+
       <Row>
         {appointments
           && appointments.data.map((data) => (
             <Col sm={12} md={3} key={data.id}>
-              <Card
-                style={{ width: '100%', minHeight: '30vh' }}
-                className="my-2"
-              >
+              <Card style={{ width: '100%', minHeight: '30vh' }} className="my-2">
                 <Card.Img
                   variant="top"
                   style={{ height: '10rem', objectFit: 'cover' }}
@@ -75,10 +91,14 @@ const Appointments = () => {
                       {' '}
                     </span>
                   </p>
+
                   <Button
                     variant="default"
                     className={`border ${styles.detailsBtn}`}
-                    onClick={() => handleAppointmentDelete(data.id, authToken)}
+                    onClick={async () => {
+                      await handleAppointmentDelete(data.id, authToken);
+                      setTimeout(() => window.location.reload(), 1500);
+                    }}
                   >
                     Cancel Appointment
                   </Button>
