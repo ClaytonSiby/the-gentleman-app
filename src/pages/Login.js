@@ -16,7 +16,6 @@ const Login = () => {
       email: email.current.value,
       password: password.current.value,
     };
-
     dispatch(requestToLogin(userCredentials));
   };
 

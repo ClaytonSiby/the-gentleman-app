@@ -20,7 +20,9 @@ const requestToLogin = (data) => (dispatch) => {
   axios.post('https://the-gentleman-api.herokuapp.com/auth/login', data)
     .then((response) => {
       dispatch(loginSuccess(response.data));
-      window.location.href = '/suits';
+      if (response.statusText === 'OK') {
+        window.location.href = '/suits';
+      }
     })
     .catch((error) => dispatch(loginFailure(error.message)));
 };
