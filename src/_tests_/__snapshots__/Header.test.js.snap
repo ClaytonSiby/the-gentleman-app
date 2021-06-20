@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders consistently to the DOM 1`] = `
+<nav
+  className="theNavbar navbar navbar-expand-sm navbar-light"
+>
+  <a
+    className="navbar-brand"
+    href="/"
+  >
+    <img
+      alt="Car Rentals"
+      className="logo"
+      src="logo.PNG"
+    />
+  </a>
+  <button
+    aria-controls="responsive-navbar-nav"
+    aria-label="Toggle navigation"
+    className="navbar-toggler collapsed"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    aria-expanded={null}
+    className="navbar-collapse collapse"
+    id="responsive-navbar-nav"
+  >
+    <div
+      className="mr-auto navbar-nav"
+      onKeyDown={[Function]}
+    />
+    <div
+      className="d-flex justify-content-end navbar-nav"
+      onKeyDown={[Function]}
+    >
+      <a
+        className="nav-link white"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        className="nav-link white"
+        href="/suits"
+      >
+        Suits
+      </a>
+      <a
+        className="nav-link white"
+        href="/appointments"
+      >
+        Appointments
+      </a>
+      <a
+        className="nav-link white"
+        href="/logout"
+      >
+        LOGOUT
+      </a>
+    </div>
+  </div>
+</nav>
+`;

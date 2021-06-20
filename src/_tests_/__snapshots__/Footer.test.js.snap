@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Renders consistently to the DOM 1`] = `
+<div
+  className="mt-2 pt-4 text-center footerContainer"
+>
+  <p>
+    Developed by Clayton Siby. ©copyright 2021. All rights reserved.
+  </p>
+  <p>
+    <span
+      className="socialIcon"
+    >
+      <a
+        href="https://github.com/ClaytonSiby"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <i
+          className="fab fa-github"
+        />
+      </a>
+    </span>
+    <span
+      className="socialIcon"
+    >
+      <a
+        href="https://www.linkedin/in/clayton-siby"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <i
+          className="fab fa-linkedin-in"
+        />
+      </a>
+    </span>
+    <span
+      className="socialIcon"
+    >
+      <a
+        href="https://twitter.com/ClaytonSiby"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <i
+          className="fab fa-twitter"
+        />
+      </a>
+    </span>
+  </p>
+</div>
+`;

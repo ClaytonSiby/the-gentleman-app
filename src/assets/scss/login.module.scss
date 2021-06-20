@@ -1,0 +1,14 @@
+.login {
+  height: calc(100vh - 130px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('../images/bg_image.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

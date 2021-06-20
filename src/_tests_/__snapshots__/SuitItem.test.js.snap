@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SuitItem renders component consistently to the DOM 1`] = `
+<div
+  className="suitContainer container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="suitImage col-md-6 col-sm-12"
+      style={
+        Object {
+          "background": "linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(undefined)",
+        }
+      }
+    />
+    <div
+      className="suitDescription p-3 col-md-6 col-sm-12"
+    >
+      <h4>
+         
+         
+      </h4>
+      <div>
+        <p>
+          available color: 
+          <span
+            className="item"
+          />
+        </p>
+        <p>
+          price: $
+          <span
+            className="item"
+          />
+        </p>
+        <p>
+          available size: 
+          <span
+            className="item"
+          />
+        </p>
+        <p>
+          type: 
+          <span
+            className="item"
+          />
+        </p>
+        <p>
+          <span
+            className="item"
+          />
+        </p>
+        <button
+          className="btn btn-md btn-default border"
+          onClick={[Function]}
+          type="button"
+        >
+          Try it Out
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Suits renders consistently to the DOM 1`] = `
+<div
+  className="text-light"
+>
+  <div
+    className="loading"
+  >
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 32 32\\">
+  <path transform=\\"translate(2)\\" d=\\"M0 12 V20 H4 V12z\\"> 
+    <animate attributeName=\\"d\\" values=\\"M0 12 V20 H4 V12z; M0 4 V28 H4 V4z; M0 12 V20 H4 V12z; M0 12 V20 H4 V12z\\" dur=\\"1.2s\\" repeatCount=\\"indefinite\\" begin=\\"0\\" keytimes=\\"0;.2;.5;1\\" keySplines=\\"0.2 0.2 0.4 0.8;0.2 0.6 0.4 0.8;0.2 0.8 0.4 0.8\\" calcMode=\\"spline\\"  />
+  </path>
+  <path transform=\\"translate(8)\\" d=\\"M0 12 V20 H4 V12z\\">
+    <animate attributeName=\\"d\\" values=\\"M0 12 V20 H4 V12z; M0 4 V28 H4 V4z; M0 12 V20 H4 V12z; M0 12 V20 H4 V12z\\" dur=\\"1.2s\\" repeatCount=\\"indefinite\\" begin=\\"0.2\\" keytimes=\\"0;.2;.5;1\\" keySplines=\\"0.2 0.2 0.4 0.8;0.2 0.6 0.4 0.8;0.2 0.8 0.4 0.8\\" calcMode=\\"spline\\"  />
+  </path>
+  <path transform=\\"translate(14)\\" d=\\"M0 12 V20 H4 V12z\\">
+    <animate attributeName=\\"d\\" values=\\"M0 12 V20 H4 V12z; M0 4 V28 H4 V4z; M0 12 V20 H4 V12z; M0 12 V20 H4 V12z\\" dur=\\"1.2s\\" repeatCount=\\"indefinite\\" begin=\\"0.4\\" keytimes=\\"0;.2;.5;1\\" keySplines=\\"0.2 0.2 0.4 0.8;0.2 0.6 0.4 0.8;0.2 0.8 0.4 0.8\\" calcMode=\\"spline\\" />
+  </path>
+  <path transform=\\"translate(20)\\" d=\\"M0 12 V20 H4 V12z\\">
+    <animate attributeName=\\"d\\" values=\\"M0 12 V20 H4 V12z; M0 4 V28 H4 V4z; M0 12 V20 H4 V12z; M0 12 V20 H4 V12z\\" dur=\\"1.2s\\" repeatCount=\\"indefinite\\" begin=\\"0.6\\" keytimes=\\"0;.2;.5;1\\" keySplines=\\"0.2 0.2 0.4 0.8;0.2 0.6 0.4 0.8;0.2 0.8 0.4 0.8\\" calcMode=\\"spline\\" />
+  </path>
+  <path transform=\\"translate(26)\\" d=\\"M0 12 V20 H4 V12z\\">
+    <animate attributeName=\\"d\\" values=\\"M0 12 V20 H4 V12z; M0 4 V28 H4 V4z; M0 12 V20 H4 V12z; M0 12 V20 H4 V12z\\" dur=\\"1.2s\\" repeatCount=\\"indefinite\\" begin=\\"0.8\\" keytimes=\\"0;.2;.5;1\\" keySplines=\\"0.2 0.2 0.4 0.8;0.2 0.6 0.4 0.8;0.2 0.8 0.4 0.8\\" calcMode=\\"spline\\" />
+  </path>
+</svg>
+",
+        }
+      }
+      style={
+        Object {
+          "fill": "grey",
+          "height": 70,
+          "width": 80,
+        }
+      }
+    />
+  </div>
+</div>
+`;

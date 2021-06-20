@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# The Gentleman
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web based application built with business specifications. The Gentleman is a full-stack application that serves the purpose of giving users a wide variety of gentleman fashion that they can view and make an appointment to try it on or negotiate with the seller. Authentication is required i.e all users need to register first to view all the gentleman suits on the site. The application makes use of [The Gentleman API](https://github.com/ClaytonSiby/gentleman-api/tree/feature/gentleman) to authenticate and authorize users and give them access to the resources available on the various endpoints provided. For authentication and authorization, I made use of the JWT standard that generates an auth token to register or login users. For a visual demo of the app in use, please navigate to the Project Design section and get familiar with how to navigate on different routes.
 
-## Available Scripts
+This project follows a [design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) on behance created by [Murat Korkmaz](https://www.behance.net/muratk).
 
-In the project directory, you can run:
+Built with react on the front-end and rails on the backend.
 
-### `yarn start`
+## Technologies used:
+> technologies used in building this project include but are not limited to: 
+- reactJS/Redux
+- EcmaScript 6
+- Bootstrap
+- react-test-renderer
+- react-testing-library
+- buildpack
+- netlify
+- localStorage
+- react-router-dom
+- axios
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project Presentation:
+[Video Presentation](https://www.loom.com/share/02b857a8d72046fd93cc59957eab33ac)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Re-review Video Presentation:
+[Re-review Video](https://www.loom.com/share/580310aabf6e4731a40f29f77db18dd5)
+## Application Production Link
+[The Gentleman](https://the-gentleman.netlify.app/)
 
-### `yarn test`
+## Project Design
+![TheGentleman](./src/assets/images/project_screenshot.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## API Repository
+[The Gentleman API](https://github.com/ClaytonSiby/gentleman-api/tree/feature/gentleman)
 
-### `yarn build`
+## API Documentation
+[The Gentleman API Documentation](https://documenter.getpostman.com/view/13879644/TzRRBnep)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project SetUp
+You can clone the project on your local machine by running:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `git clone https://github.com/ClaytonSiby/the-gentleman-app.git`
+then:
+-  `cd the-gentleman-app`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### install all dependencies by running:
+- `yarn install`
 
-### `yarn eject`
+- you can run all tests for this project using `yarn test` from the command line.
+- you can view the project live by runnig `yarn start`
+- for production release/deployment run `yarn build` to bundle a minified version of the code.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Author 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👤 **Clayton Siby**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Github: [@ClaytonSiby](https://github.com/ClaytonSiby)
+   
+- Linkedin: [Linkedin Profile](https://www.linkedin.com/in/clayton-siby-48a8a0183/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Twitter: [@Twitter](https://twitter.com/ClaytonSiby)
 
-## Learn More
+## :+1: Acknowledgements
+> The success of this project is possible thanks to the platforms and people listed below and more:
+- [stackoverflow](https://stackoverflow.com/)
+- [microverse](https://microverse.org)
+- [the dev community](https://dev.to/)
+- [medium](https://medium.com)
+- [Murat Korkmaz](https://www.behance.net/muratk)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## :handshake: Contributing 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Contributions, issues and feature requests are welcome! Feel free to check the [issues page](https://github.com/ClaytonSiby/the-gentleman-app/issues)
+- To contribute to this project:
+- Fork this repository & clone locally.
+- Create an upstream remote and sync your local copy.
+- Create a new branch.
+- Push your code to your origin repository.
+- Create a new Pull Request .
 
-### Code Splitting
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Give a ⭐️ if you like this project!
